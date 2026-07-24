@@ -9,10 +9,28 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PulsesExportRouteImport } from './routes/pulses-export'
+import { Route as OilSeedsExportRouteImport } from './routes/oil-seeds-export'
+import { Route as LivestockExportRouteImport } from './routes/livestock-export'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 
+const PulsesExportRoute = PulsesExportRouteImport.update({
+  id: '/pulses-export',
+  path: '/pulses-export',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OilSeedsExportRoute = OilSeedsExportRouteImport.update({
+  id: '/oil-seeds-export',
+  path: '/oil-seeds-export',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LivestockExportRoute = LivestockExportRouteImport.update({
+  id: '/livestock-export',
+  path: '/livestock-export',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
@@ -33,34 +51,86 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/livestock-export': typeof LivestockExportRoute
+  '/oil-seeds-export': typeof OilSeedsExportRoute
+  '/pulses-export': typeof PulsesExportRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/livestock-export': typeof LivestockExportRoute
+  '/oil-seeds-export': typeof OilSeedsExportRoute
+  '/pulses-export': typeof PulsesExportRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
+  '/livestock-export': typeof LivestockExportRoute
+  '/oil-seeds-export': typeof OilSeedsExportRoute
+  '/pulses-export': typeof PulsesExportRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/gallery'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/gallery'
+    | '/livestock-export'
+    | '/oil-seeds-export'
+    | '/pulses-export'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/gallery'
-  id: '__root__' | '/' | '/contact' | '/gallery'
+  to:
+    | '/'
+    | '/contact'
+    | '/gallery'
+    | '/livestock-export'
+    | '/oil-seeds-export'
+    | '/pulses-export'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/gallery'
+    | '/livestock-export'
+    | '/oil-seeds-export'
+    | '/pulses-export'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
+  LivestockExportRoute: typeof LivestockExportRoute
+  OilSeedsExportRoute: typeof OilSeedsExportRoute
+  PulsesExportRoute: typeof PulsesExportRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/pulses-export': {
+      id: '/pulses-export'
+      path: '/pulses-export'
+      fullPath: '/pulses-export'
+      preLoaderRoute: typeof PulsesExportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/oil-seeds-export': {
+      id: '/oil-seeds-export'
+      path: '/oil-seeds-export'
+      fullPath: '/oil-seeds-export'
+      preLoaderRoute: typeof OilSeedsExportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/livestock-export': {
+      id: '/livestock-export'
+      path: '/livestock-export'
+      fullPath: '/livestock-export'
+      preLoaderRoute: typeof LivestockExportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gallery': {
       id: '/gallery'
       path: '/gallery'
@@ -89,6 +159,9 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
+  LivestockExportRoute: LivestockExportRoute,
+  OilSeedsExportRoute: OilSeedsExportRoute,
+  PulsesExportRoute: PulsesExportRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
