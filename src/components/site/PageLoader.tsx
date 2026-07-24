@@ -2,16 +2,21 @@ import { useEffect, useState } from "react";
 
 /** Cinematic loader: brand fades in, then a forest curtain slides up to reveal. */
 export function PageLoader() {
-  const [phase, setPhase] = useState<"in" | "hold" | "reveal" | "gone">("in");
+  const seen = typeof window !== "undefined" && sessionStorage.getItem("zygc_loader_seen") === "1";
+  const [phase, setPhase] = useState<"in" | "hold" | "reveal" | "gone">(seen ? "gone" : "in");
 
   useEffect(() => {
+    if (seen) return;
     const t1 = setTimeout(() => setPhase("hold"), 500);
     const t2 = setTimeout(() => setPhase("reveal"), 1200);
-    const t3 = setTimeout(() => setPhase("gone"), 2100);
+    const t3 = setTimeout(() => {
+      setPhase("gone");
+      try { sessionStorage.setItem("zygc_loader_seen", "1"); } catch {}
+    }, 2100);
     return () => {
       clearTimeout(t1); clearTimeout(t2); clearTimeout(t3);
     };
-  }, []);
+  }, [seen]);
 
   if (phase === "gone") return null;
 
