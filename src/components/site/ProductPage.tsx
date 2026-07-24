@@ -146,8 +146,9 @@ export function ProductPage(p: ProductPageProps) {
       </section>
 
       {/* Support pillars */}
-      <section className="px-3 sm:px-4">
-        <div className="max-w-6xl mx-auto rounded-3xl bg-forest-deep text-cream px-6 md:px-14 py-16 sm:py-20 relative overflow-hidden">
+      <section className="sm:px-4">
+        <div className="max-w-6xl mx-auto sm:rounded-3xl bg-forest-deep text-cream px-5 sm:px-6 md:px-14 py-16 sm:py-20 relative overflow-hidden">
+
           <Particles className="absolute inset-0 w-full h-full" count={30} />
           <div className="relative text-center max-w-3xl mx-auto">
             <Reveal>
