@@ -154,8 +154,8 @@ function Home() {
 
 function Hero() {
   return (
-    <section data-hero className="pt-20 sm:pt-24 px-3 sm:px-4">
-      <div className="relative rounded-3xl overflow-hidden min-h-[640px] sm:min-h-[720px] flex flex-col justify-between">
+    <section data-hero className="pt-20 sm:pt-24">
+      <div className="relative overflow-hidden min-h-[640px] sm:min-h-[720px] flex flex-col justify-between">
         <div
           data-hero-bg
           className="absolute inset-x-0 -top-24 -bottom-24 bg-cover bg-center will-change-transform"
