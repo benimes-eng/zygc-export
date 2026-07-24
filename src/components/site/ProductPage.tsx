@@ -45,8 +45,8 @@ export function ProductPage(p: ProductPageProps) {
       <Nav />
 
       {/* Hero */}
-      <section className="pt-20 sm:pt-24 px-3 sm:px-4">
-        <div className="relative rounded-3xl overflow-hidden min-h-[560px] sm:min-h-[640px] flex items-end">
+      <section className="pt-20 sm:pt-24">
+        <div className="relative overflow-hidden min-h-[560px] sm:min-h-[640px] flex items-end">
           <div
             ref={bgRef}
             className="absolute inset-x-0 -top-24 -bottom-24 bg-cover bg-center will-change-transform"
