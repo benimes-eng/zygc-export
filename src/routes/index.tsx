@@ -437,8 +437,9 @@ function Quality() {
 function CTA() {
   const bgRef = useParallax<HTMLDivElement>(0.25);
   return (
-    <section className="px-3 sm:px-4 pb-20 sm:pb-24">
-      <div className="max-w-6xl mx-auto relative rounded-3xl overflow-hidden px-6 py-20 sm:py-24 text-center">
+    <section className="sm:px-4 pb-20 sm:pb-24">
+      <div className="max-w-6xl mx-auto relative sm:rounded-3xl overflow-hidden px-5 sm:px-6 py-20 sm:py-24 text-center">
+
         <div
           ref={bgRef}
           className="absolute inset-x-0 -top-24 -bottom-24 bg-cover bg-center will-change-transform"
