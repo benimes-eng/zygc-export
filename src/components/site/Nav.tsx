@@ -42,15 +42,15 @@ export function Nav() {
             onMouseEnter={() => setProductsOpen(true)}
             onMouseLeave={() => setProductsOpen(false)}
           >
-            <a href="/#categories" className={`${linkCls} flex items-center gap-1`}>
-              Products <ChevronDown className="w-3.5 h-3.5" />
-            </a>
+            <button className={`${linkCls} flex items-center gap-1`}>
+              Products <ChevronDown className={`w-3.5 h-3.5 transition-transform ${productsOpen ? "rotate-180" : ""}`} />
+            </button>
             {productsOpen && (
               <div className="absolute top-full left-0 pt-2 animate-fade-in">
-                <div className="min-w-[200px] rounded-2xl bg-cream/90 backdrop-blur-xl border border-white/40 shadow-xl p-2">
-                  <a href="/#categories" className="block px-3 py-2 rounded-lg text-sm hover:bg-forest/5 hover:text-forest">Livestock</a>
-                  <a href="/#categories" className="block px-3 py-2 rounded-lg text-sm hover:bg-forest/5 hover:text-forest">Oil Seeds</a>
-                  <a href="/#categories" className="block px-3 py-2 rounded-lg text-sm hover:bg-forest/5 hover:text-forest">Pulses</a>
+                <div className="min-w-[240px] rounded-2xl bg-cream/90 backdrop-blur-xl border border-white/40 shadow-xl p-2">
+                  <Link to="/livestock-export" className="block px-3 py-2 rounded-lg text-sm hover:bg-forest/5 hover:text-forest">Livestock Export</Link>
+                  <Link to="/oil-seeds-export" className="block px-3 py-2 rounded-lg text-sm hover:bg-forest/5 hover:text-forest">Oil Seeds Export</Link>
+                  <Link to="/pulses-export" className="block px-3 py-2 rounded-lg text-sm hover:bg-forest/5 hover:text-forest">Pulses Export</Link>
                 </div>
               </div>
             )}
@@ -77,7 +77,11 @@ export function Nav() {
       {open && (
         <div className="md:hidden mt-2 rounded-3xl bg-cream/90 backdrop-blur-xl border border-white/40 shadow-xl p-4 animate-fade-in">
           <ul className="flex flex-col text-ink">
-            <li><a onClick={() => setOpen(false)} href="/#categories" className="block px-3 py-3 rounded-xl hover:bg-forest/5">Products</a></li>
+            <li className="px-3 py-2 text-xs uppercase tracking-[0.18em] text-gold">Products</li>
+            <li><Link onClick={() => setOpen(false)} to="/livestock-export" className="block px-3 py-2 rounded-xl hover:bg-forest/5">Livestock Export</Link></li>
+            <li><Link onClick={() => setOpen(false)} to="/oil-seeds-export" className="block px-3 py-2 rounded-xl hover:bg-forest/5">Oil Seeds Export</Link></li>
+            <li><Link onClick={() => setOpen(false)} to="/pulses-export" className="block px-3 py-2 rounded-xl hover:bg-forest/5">Pulses Export</Link></li>
+            <li className="border-t border-hairline my-2" />
             <li><a onClick={() => setOpen(false)} href="/#process" className="block px-3 py-3 rounded-xl hover:bg-forest/5">Process</a></li>
             <li><a onClick={() => setOpen(false)} href="/#quality" className="block px-3 py-3 rounded-xl hover:bg-forest/5">Quality</a></li>
             <li><Link onClick={() => setOpen(false)} to="/gallery" className="block px-3 py-3 rounded-xl hover:bg-forest/5">Gallery</Link></li>
