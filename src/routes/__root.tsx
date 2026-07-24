@@ -83,6 +83,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "Premium Ethiopian livestock, oil seeds and pulses exported globally with quality, integrity and international standards." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "ZYGC Export PLC — Ethiopia's Trusted Global Agricultural Export Partner" },
+      { name: "twitter:description", content: "Premium Ethiopian livestock, oil seeds and pulses exported globally with quality, integrity and international standards." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5e548222-aa87-4d73-80ed-a374985eeb40/id-preview-d29c9b16--ffbb0471-2114-4f41-be7f-4976f1c2c0fd.lovable.app-1784888066778.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5e548222-aa87-4d73-80ed-a374985eeb40/id-preview-d29c9b16--ffbb0471-2114-4f41-be7f-4976f1c2c0fd.lovable.app-1784888066778.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
