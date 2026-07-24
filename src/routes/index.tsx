@@ -3,6 +3,8 @@ import { ArrowRight, Users, Truck, Filter, Scale, BadgeCheck, Package, FileText,
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { WhatsApp } from "@/components/site/WhatsApp";
+import { PageLoader } from "@/components/site/PageLoader";
+import { useParallax } from "@/hooks/use-parallax";
 
 import heroBg from "@/assets/hero-bg.jpg";
 import aboutImg from "@/assets/about.jpg";
@@ -23,7 +25,8 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-cream overflow-x-hidden">
+      <PageLoader />
       <Nav />
       <Hero />
       <About />
@@ -39,45 +42,46 @@ function Home() {
 }
 
 function Hero() {
+  const bgRef = useParallax<HTMLDivElement>(0.35);
   return (
-    <section className="pt-24 px-4">
-      <div
-        className="relative rounded-3xl overflow-hidden min-h-[720px] flex flex-col justify-between"
-        style={{
-          backgroundImage: `linear-gradient(180deg, rgba(15,61,46,0.35) 0%, rgba(10,43,32,0.85) 100%), url(${heroBg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="flex-1 flex items-center justify-center px-6 py-24">
-          <div className="max-w-4xl w-full rounded-3xl border border-white/10 bg-black/20 backdrop-blur-sm p-10 md:p-16 text-center">
+    <section className="pt-20 sm:pt-24 px-3 sm:px-4">
+      <div className="relative rounded-3xl overflow-hidden min-h-[640px] sm:min-h-[720px] flex flex-col justify-between">
+        <div
+          ref={bgRef}
+          className="absolute inset-x-0 -top-24 -bottom-24 bg-cover bg-center will-change-transform"
+          style={{ backgroundImage: `url(${heroBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-forest/30 to-forest-deep/85" />
+
+        <div className="relative flex-1 flex items-center justify-center px-4 sm:px-6 py-20 sm:py-24">
+          <div className="max-w-4xl w-full rounded-3xl border border-white/10 bg-black/20 backdrop-blur-sm p-6 sm:p-10 md:p-16 text-center animate-fade-in">
             <div className="eyebrow mb-6">Ethiopia's Trusted Global Agricultural Export Partner</div>
-            <h1 className="font-serif text-white text-5xl md:text-7xl leading-[1.05] tracking-tight">
+            <h1 className="font-serif text-white text-4xl sm:text-5xl md:text-7xl leading-[1.05] tracking-tight">
               Exporting Ethiopia's<br />
               Finest Agricultural<br />
               Products To The World
             </h1>
-            <p className="mt-8 text-white/80 max-w-2xl mx-auto text-lg leading-relaxed">
+            <p className="mt-6 sm:mt-8 text-white/80 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
               Premium livestock, oil seeds and pulses exported globally with quality,
               integrity and international standards.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4 justify-center">
+            <div className="mt-8 sm:mt-10 flex flex-wrap gap-3 sm:gap-4 justify-center">
               <a href="#categories" className="btn-forest">Explore Products <ArrowRight className="w-4 h-4" /></a>
               <Link to="/contact" className="btn-gold-outline">Contact Sales <ArrowRight className="w-4 h-4" /></Link>
             </div>
           </div>
         </div>
 
-        <div className="px-6 pb-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="relative px-4 sm:px-6 pb-6 sm:pb-8 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           {[
             ["15+", "Years Experience"],
             ["60+", "Countries Served"],
             ["500+", "Farmers"],
             ["100%", "Export Quality"],
           ].map(([k, v]) => (
-            <div key={v} className="card-forest px-6 py-6">
-              <div className="text-gold text-4xl font-serif">{k}</div>
-              <div className="text-cream/70 text-sm mt-2">{v}</div>
+            <div key={v} className="card-forest px-4 sm:px-6 py-4 sm:py-6">
+              <div className="text-gold text-2xl sm:text-4xl font-serif">{k}</div>
+              <div className="text-cream/70 text-xs sm:text-sm mt-1 sm:mt-2">{v}</div>
             </div>
           ))}
         </div>
@@ -88,12 +92,12 @@ function Hero() {
 
 function About() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-12 items-start">
+    <section className="max-w-6xl mx-auto px-6 py-20 sm:py-28 grid md:grid-cols-2 gap-12 items-start">
       <img src={aboutImg} alt="Ethiopian highland farmland" loading="lazy" width={1000} height={1200}
            className="rounded-3xl w-full h-auto object-cover" />
       <div>
         <div className="eyebrow mb-4">About ZYGC Export PLC</div>
-        <h2 className="font-serif text-4xl md:text-5xl leading-tight text-ink">
+        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight text-ink">
           A premium export house connecting Ethiopia's agricultural strength with global demand.
         </h2>
         <p className="mt-6 text-muted-ink leading-relaxed">
@@ -127,25 +131,25 @@ function Categories() {
     { img: catPulses, tag: "Chickpeas • Mung • Beans", title: "Pulses", desc: "Chickpeas, green mung, white pea beans, kidney beans and lentils for wholesalers and importers." },
   ];
   return (
-    <section id="categories" className="px-4">
-      <div className="max-w-6xl mx-auto rounded-3xl bg-forest-deep text-cream px-6 md:px-14 py-20">
+    <section id="categories" className="px-3 sm:px-4 scroll-mt-24">
+      <div className="max-w-6xl mx-auto rounded-3xl bg-forest-deep text-cream px-6 md:px-14 py-16 sm:py-20">
         <div className="text-center max-w-2xl mx-auto">
           <div className="eyebrow mb-4">Export Categories</div>
-          <h2 className="font-serif text-4xl md:text-5xl leading-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight">
             Premium agricultural products prepared for international markets.
           </h2>
         </div>
-        <div className="mt-14 grid md:grid-cols-3 gap-6">
+        <div className="mt-10 sm:mt-14 grid md:grid-cols-3 gap-6">
           {items.map((c) => (
-            <div key={c.title} className="rounded-2xl border border-gold/20 bg-forest p-4 flex flex-col">
+            <div key={c.title} className="rounded-2xl border border-gold/20 bg-forest p-4 flex flex-col hover-scale">
               <img src={c.img} alt={c.title} loading="lazy" className="rounded-xl h-52 w-full object-cover" />
               <div className="p-4 flex-1 flex flex-col">
                 <div className="text-gold text-[0.68rem] tracking-[0.16em] uppercase font-semibold">{c.tag}</div>
                 <h3 className="font-serif text-3xl mt-3 text-cream">{c.title}</h3>
                 <p className="text-cream/70 text-sm mt-3 leading-relaxed flex-1">{c.desc}</p>
-                <a href="#" className="text-gold text-sm mt-6 inline-flex items-center gap-2 hover:gap-3 transition-all">
+                <Link to="/contact" className="text-gold text-sm mt-6 inline-flex items-center gap-2 hover:gap-3 transition-all">
                   Learn More <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </div>
           ))}
@@ -165,16 +169,16 @@ function Catalog() {
     { img: pSunflower, t: "Sunflower Seed", d: "Sunflower seed supply for edible oil and processing customers." },
   ];
   return (
-    <section className="max-w-6xl mx-auto px-6 py-28">
+    <section className="max-w-6xl mx-auto px-6 py-20 sm:py-28">
       <div className="text-center max-w-2xl mx-auto">
         <div className="eyebrow mb-4">Product Catalog</div>
-        <h2 className="font-serif text-4xl md:text-5xl leading-tight text-ink">
+        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight text-ink">
           Export-ready varieties, packaging and documentation across every category.
         </h2>
       </div>
-      <div className="mt-14 grid md:grid-cols-3 gap-6">
+      <div className="mt-10 sm:mt-14 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
         {items.map((p) => (
-          <div key={p.t} className="card-soft p-4">
+          <div key={p.t} className="card-soft p-4 hover-scale">
             <img src={p.img} alt={p.t} loading="lazy" className="rounded-xl h-52 w-full object-cover" />
             <div className="p-4">
               <h3 className="font-serif text-2xl text-forest">{p.t}</h3>
@@ -200,18 +204,18 @@ function Process() {
     { i: Globe, t: "Global Delivery" },
   ];
   return (
-    <section id="process" className="max-w-6xl mx-auto px-6 py-28">
+    <section id="process" className="max-w-6xl mx-auto px-6 py-20 sm:py-28 scroll-mt-24">
       <div className="text-center max-w-2xl mx-auto">
         <div className="eyebrow mb-4">Export Process</div>
-        <h2 className="font-serif text-4xl md:text-5xl leading-tight text-ink">
+        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight text-ink">
           A disciplined nine-stage path from farmer network to global delivery.
         </h2>
       </div>
-      <div className="mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-9 gap-3">
+      <div className="mt-10 sm:mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-9 gap-3">
         {steps.map((s, idx) => {
           const Icon = s.i;
           return (
-            <div key={s.t} className="card-soft p-4 flex flex-col items-center text-center">
+            <div key={s.t} className="card-soft p-4 flex flex-col items-center text-center hover-scale">
               <Icon className="w-6 h-6 text-forest" />
               <div className="mt-3 text-xs text-muted-ink">{String(idx + 1).padStart(2, "0")}</div>
               <div className="text-forest text-sm font-medium mt-1 leading-tight">{s.t}</div>
@@ -233,18 +237,18 @@ function Quality() {
     { i: MapPin, t: "Traceability", d: "Clear sourcing and shipment visibility from farmer network to export documentation." },
   ];
   return (
-    <section id="quality" className="max-w-6xl mx-auto px-6 py-28">
+    <section id="quality" className="max-w-6xl mx-auto px-6 py-20 sm:py-28 scroll-mt-24">
       <div className="text-center max-w-2xl mx-auto">
         <div className="eyebrow mb-4">Quality Assurance</div>
-        <h2 className="font-serif text-4xl md:text-5xl leading-tight text-ink">
+        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight text-ink">
           Certified export confidence for demanding international buyers.
         </h2>
       </div>
-      <div className="mt-14 grid md:grid-cols-3 gap-5">
+      <div className="mt-10 sm:mt-14 grid sm:grid-cols-2 md:grid-cols-3 gap-5">
         {items.map((q) => {
           const Icon = q.i;
           return (
-            <div key={q.t} className="card-soft p-8">
+            <div key={q.t} className="card-soft p-8 hover-scale">
               <div className="w-11 h-11 rounded-xl bg-cream border border-hairline flex items-center justify-center">
                 <Icon className="w-5 h-5 text-forest" />
               </div>
@@ -268,26 +272,28 @@ function Quality() {
 }
 
 function CTA() {
+  const bgRef = useParallax<HTMLDivElement>(0.25);
   return (
-    <section className="px-4 pb-24">
-      <div
-        className="max-w-6xl mx-auto rounded-3xl overflow-hidden px-6 py-24 text-center"
-        style={{
-          backgroundImage: `linear-gradient(180deg, rgba(10,43,32,0.85), rgba(10,43,32,0.85)), url(${ctaBg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <h2 className="font-serif text-4xl md:text-6xl text-cream leading-tight max-w-3xl mx-auto">
-          Ready To Source Ethiopia's Finest Agricultural Products?
-        </h2>
-        <div className="mt-10 flex flex-wrap gap-4 justify-center">
-          <Link to="/contact" className="btn-forest bg-gold text-forest-deep hover:!bg-gold-soft">
-            Get A Quote <ArrowRight className="w-4 h-4" />
-          </Link>
-          <Link to="/contact" className="btn-gold-outline">
-            Talk To Export Team <ArrowRight className="w-4 h-4" />
-          </Link>
+    <section className="px-3 sm:px-4 pb-20 sm:pb-24">
+      <div className="max-w-6xl mx-auto relative rounded-3xl overflow-hidden px-6 py-20 sm:py-24 text-center">
+        <div
+          ref={bgRef}
+          className="absolute inset-x-0 -top-24 -bottom-24 bg-cover bg-center will-change-transform"
+          style={{ backgroundImage: `url(${ctaBg})` }}
+        />
+        <div className="absolute inset-0 bg-forest-deep/85" />
+        <div className="relative">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl text-cream leading-tight max-w-3xl mx-auto">
+            Ready To Source Ethiopia's Finest Agricultural Products?
+          </h2>
+          <div className="mt-8 sm:mt-10 flex flex-wrap gap-3 sm:gap-4 justify-center">
+            <Link to="/contact" className="btn-forest bg-gold text-forest-deep hover:!bg-gold-soft">
+              Get A Quote <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link to="/contact" className="btn-gold-outline">
+              Talk To Export Team <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
