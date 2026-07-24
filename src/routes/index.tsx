@@ -272,8 +272,9 @@ function Categories() {
     { img: catPulses, tag: "Chickpeas • Mung • Beans", title: "Pulses" as const, desc: "Chickpeas, green mung, white pea beans, kidney beans and lentils for wholesalers and importers." },
   ];
   return (
-    <section id="categories" className="px-3 sm:px-4 scroll-mt-24">
-      <div className="max-w-6xl mx-auto rounded-3xl bg-forest-deep text-cream px-6 md:px-14 py-16 sm:py-20 relative overflow-hidden">
+    <section id="categories" className="sm:px-4 scroll-mt-24">
+      <div className="max-w-6xl mx-auto sm:rounded-3xl bg-forest-deep text-cream px-5 sm:px-6 md:px-14 py-16 sm:py-20 relative overflow-hidden">
+
         <Particles className="absolute inset-0 w-full h-full" count={35} />
         <div className="relative text-center max-w-2xl mx-auto">
           <Reveal>
