@@ -112,3 +112,17 @@
   border-radius: 1.25rem;
   color: var(--cream);
 }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@utility animate-fade-in {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+@utility hover-scale {
+  transition: transform 0.25s ease;
+  &:hover { transform: scale(1.02); }
+}
