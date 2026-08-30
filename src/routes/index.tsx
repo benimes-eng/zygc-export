@@ -24,6 +24,16 @@ import pSunflower from "@/assets/p-sunflower.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "ZYGC Construction PLC — Construction, Export & Import Ethiopia" },
+      { name: "description", content: "ZYGC Construction PLC is a multi-sector Ethiopian enterprise: construction and engineering, agricultural and livestock exports, machinery imports and pharmaceutical supply." },
+      { property: "og:title", content: "ZYGC Construction PLC — Construction, Export & Import" },
+      { property: "og:description", content: "Engineering, global trade and medical supply from Addis Ababa. Established 2017." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Home,
 });
 
@@ -31,7 +41,10 @@ const categoryLinks = {
   Livestock: "/livestock-export",
   "Oil Seeds": "/oil-seeds-export",
   Pulses: "/pulses-export",
+  Machinery: "/machinery-imports",
+  Pharmaceuticals: "/pharmaceutical-imports",
 } as const;
+
 
 function Home() {
   // Hero scroll-driven zoom + fade via GSAP ScrollTrigger
