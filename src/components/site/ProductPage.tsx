@@ -77,7 +77,7 @@ export function ProductPage(p: ProductPageProps) {
                   </Magnetic>
                   <Magnetic>
                     <a
-                      href="https://wa.me/251900000000"
+                      href="https://wa.me/251911247873"
                       target="_blank"
                       rel="noreferrer"
                       className="btn-gold-outline"
@@ -192,7 +192,7 @@ export function ProductPage(p: ProductPageProps) {
               </Link>
             </Magnetic>
             <Magnetic>
-              <a href="https://wa.me/251900000000" target="_blank" rel="noreferrer" className="btn-gold-outline">
+              <a href="https://wa.me/251911247873" target="_blank" rel="noreferrer" className="btn-gold-outline">
                 WhatsApp <ArrowRight className="w-4 h-4" />
               </a>
             </Magnetic>

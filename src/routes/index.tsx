@@ -24,6 +24,16 @@ import pSunflower from "@/assets/p-sunflower.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "ZYGC Construction PLC — Construction, Export & Import Ethiopia" },
+      { name: "description", content: "ZYGC Construction PLC is a multi-sector Ethiopian enterprise: construction and engineering, agricultural and livestock exports, machinery imports and pharmaceutical supply." },
+      { property: "og:title", content: "ZYGC Construction PLC — Construction, Export & Import" },
+      { property: "og:description", content: "Engineering, global trade and medical supply from Addis Ababa. Established 2017." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Home,
 });
 
@@ -31,7 +41,10 @@ const categoryLinks = {
   Livestock: "/livestock-export",
   "Oil Seeds": "/oil-seeds-export",
   Pulses: "/pulses-export",
+  Machinery: "/machinery-imports",
+  Pharmaceuticals: "/pharmaceutical-imports",
 } as const;
+
 
 function Home() {
   // Hero scroll-driven zoom + fade via GSAP ScrollTrigger
@@ -179,21 +192,22 @@ function Hero() {
         <div data-hero-content className="relative flex-1 flex items-center justify-center px-4 sm:px-6 py-20 sm:py-24">
           <div className="max-w-4xl w-full rounded-3xl border border-white/10 bg-black/20 backdrop-blur-sm p-6 sm:p-10 md:p-16 text-center">
             <Reveal>
-              <div className="eyebrow mb-6">Ethiopia's Trusted Global Agricultural Export Partner</div>
+              <div className="eyebrow mb-6">Construction • Global Trade • Medical Supply</div>
             </Reveal>
             <h1 className="font-serif text-white text-4xl sm:text-5xl md:text-7xl leading-[1.05] tracking-tight">
-              <SplitReveal text="Exporting Ethiopia's Finest Agricultural Products To The World" />
+              <SplitReveal text="Building Ethiopia And Connecting It To Global Markets" />
             </h1>
             <Reveal delay={400}>
               <p className="mt-6 sm:mt-8 text-white/80 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
-                Premium livestock, oil seeds and pulses exported globally with quality,
-                integrity and international standards.
+                ZYGC Construction PLC combines engineering foundations with a diversified
+                import-export division: premium Ethiopian agricultural and livestock exports,
+                heavy machinery imports and essential pharmaceutical supply.
               </p>
             </Reveal>
             <Reveal delay={600}>
               <div className="mt-8 sm:mt-10 flex flex-wrap gap-3 sm:gap-4 justify-center">
                 <Magnetic>
-                  <a href="#categories" className="btn-forest">Explore Products <ArrowRight className="w-4 h-4" /></a>
+                  <a href="#categories" className="btn-forest">Explore Divisions <ArrowRight className="w-4 h-4" /></a>
                 </Magnetic>
                 <Magnetic>
                   <Link to="/contact" className="btn-gold-outline">Contact Sales <ArrowRight className="w-4 h-4" /></Link>
@@ -205,10 +219,10 @@ function Hero() {
 
         <div className="relative px-4 sm:px-6 pb-6 sm:pb-8 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           {[
-            ["15+", "Years Experience"],
-            ["60+", "Countries Served"],
-            ["500+", "Farmers"],
-            ["100%", "Export Quality"],
+            ["2017", "Established"],
+            ["4", "Business Divisions"],
+            ["EFDA", "Compliant Imports"],
+            ["100%", "Quality First"],
           ].map(([k, v], i) => (
             <Reveal key={v} delay={700 + i * 80}>
               <div className="card-forest px-4 sm:px-6 py-4 sm:py-6">
@@ -232,25 +246,26 @@ function About() {
       </Reveal>
       <div>
         <Reveal>
-          <div className="eyebrow mb-4">About ZYGC Export PLC</div>
+          <div className="eyebrow mb-4">About ZYGC Construction PLC</div>
         </Reveal>
         <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight text-ink">
-          <SplitReveal text="A premium export house connecting Ethiopia's agricultural strength with global demand." />
+          <SplitReveal text="A multi-sector enterprise engineering infrastructure and driving global trade." />
         </h2>
         <Reveal delay={200}>
           <p className="mt-6 text-muted-ink leading-relaxed">
-            ZYGC Export PLC specializes in livestock, oil seeds and pulses for international
-            buyers who require reliable supply, disciplined documentation and export-grade
-            quality control. Our work begins with trusted farmer networks and ends with
-            shipment-ready products prepared for global standards.
+            Established on November 23, 2017 and based in Bole, Addis Ababa, Z Y G C Construction PLC
+            operates as a multi-sector enterprise in Ethiopia. We combine our core engineering
+            foundations with a robust Import-Export division, leveraging global trade networks to
+            import heavy industrial goods and pharmaceuticals while exporting highly valuable
+            Ethiopian agricultural and livestock commodities.
           </p>
         </Reveal>
 
         <div className="mt-8 space-y-4">
           {[
-            ["Mission", "Export Ethiopia's finest agricultural products with integrity, traceability and disciplined service."],
-            ["Vision", "Become a trusted African export partner recognized for premium sourcing and dependable delivery."],
-            ["Core Values", "Quality. Partnership. Compliance. Reliability. Respect for the farmers and communities behind every shipment."],
+            ["Vision", "To be a leading, multi-sector enterprise in East Africa, recognized for engineering world-class infrastructure and driving global trade that fosters sustainable economic growth, food security and advanced healthcare solutions."],
+            ["Mission", "To deliver high-quality construction, engineering and project management services while operating an agile import-export network that supplies essential industrial machinery, advanced medical goods and premium agricultural products to the global market."],
+            ["Core Values", "Quality First. Synergy. Reliability. National Impact — contributing to Ethiopia's industrialization, foreign currency generation and healthcare accessibility."],
           ].map(([t, d], i) => (
             <Reveal key={t} delay={i * 100}>
               <div className="card-soft p-6">

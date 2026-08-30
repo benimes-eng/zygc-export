@@ -10,7 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PulsesExportRouteImport } from './routes/pulses-export'
+import { Route as PharmaceuticalImportsRouteImport } from './routes/pharmaceutical-imports'
 import { Route as OilSeedsExportRouteImport } from './routes/oil-seeds-export'
+import { Route as MachineryImportsRouteImport } from './routes/machinery-imports'
 import { Route as LivestockExportRouteImport } from './routes/livestock-export'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -21,9 +23,19 @@ const PulsesExportRoute = PulsesExportRouteImport.update({
   path: '/pulses-export',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PharmaceuticalImportsRoute = PharmaceuticalImportsRouteImport.update({
+  id: '/pharmaceutical-imports',
+  path: '/pharmaceutical-imports',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OilSeedsExportRoute = OilSeedsExportRouteImport.update({
   id: '/oil-seeds-export',
   path: '/oil-seeds-export',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MachineryImportsRoute = MachineryImportsRouteImport.update({
+  id: '/machinery-imports',
+  path: '/machinery-imports',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LivestockExportRoute = LivestockExportRouteImport.update({
@@ -52,7 +64,9 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/livestock-export': typeof LivestockExportRoute
+  '/machinery-imports': typeof MachineryImportsRoute
   '/oil-seeds-export': typeof OilSeedsExportRoute
+  '/pharmaceutical-imports': typeof PharmaceuticalImportsRoute
   '/pulses-export': typeof PulsesExportRoute
 }
 export interface FileRoutesByTo {
@@ -60,7 +74,9 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/livestock-export': typeof LivestockExportRoute
+  '/machinery-imports': typeof MachineryImportsRoute
   '/oil-seeds-export': typeof OilSeedsExportRoute
+  '/pharmaceutical-imports': typeof PharmaceuticalImportsRoute
   '/pulses-export': typeof PulsesExportRoute
 }
 export interface FileRoutesById {
@@ -69,7 +85,9 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/livestock-export': typeof LivestockExportRoute
+  '/machinery-imports': typeof MachineryImportsRoute
   '/oil-seeds-export': typeof OilSeedsExportRoute
+  '/pharmaceutical-imports': typeof PharmaceuticalImportsRoute
   '/pulses-export': typeof PulsesExportRoute
 }
 export interface FileRouteTypes {
@@ -79,7 +97,9 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery'
     | '/livestock-export'
+    | '/machinery-imports'
     | '/oil-seeds-export'
+    | '/pharmaceutical-imports'
     | '/pulses-export'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -87,7 +107,9 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery'
     | '/livestock-export'
+    | '/machinery-imports'
     | '/oil-seeds-export'
+    | '/pharmaceutical-imports'
     | '/pulses-export'
   id:
     | '__root__'
@@ -95,7 +117,9 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery'
     | '/livestock-export'
+    | '/machinery-imports'
     | '/oil-seeds-export'
+    | '/pharmaceutical-imports'
     | '/pulses-export'
   fileRoutesById: FileRoutesById
 }
@@ -104,7 +128,9 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
   LivestockExportRoute: typeof LivestockExportRoute
+  MachineryImportsRoute: typeof MachineryImportsRoute
   OilSeedsExportRoute: typeof OilSeedsExportRoute
+  PharmaceuticalImportsRoute: typeof PharmaceuticalImportsRoute
   PulsesExportRoute: typeof PulsesExportRoute
 }
 
@@ -117,11 +143,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PulsesExportRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pharmaceutical-imports': {
+      id: '/pharmaceutical-imports'
+      path: '/pharmaceutical-imports'
+      fullPath: '/pharmaceutical-imports'
+      preLoaderRoute: typeof PharmaceuticalImportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/oil-seeds-export': {
       id: '/oil-seeds-export'
       path: '/oil-seeds-export'
       fullPath: '/oil-seeds-export'
       preLoaderRoute: typeof OilSeedsExportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/machinery-imports': {
+      id: '/machinery-imports'
+      path: '/machinery-imports'
+      fullPath: '/machinery-imports'
+      preLoaderRoute: typeof MachineryImportsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/livestock-export': {
@@ -160,9 +200,21 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
   LivestockExportRoute: LivestockExportRoute,
+  MachineryImportsRoute: MachineryImportsRoute,
   OilSeedsExportRoute: OilSeedsExportRoute,
+  PharmaceuticalImportsRoute: PharmaceuticalImportsRoute,
   PulsesExportRoute: PulsesExportRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
