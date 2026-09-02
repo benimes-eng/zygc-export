@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 import { SmoothScroll } from "@/components/site/SmoothScroll";
 import { CustomCursor } from "@/components/site/CustomCursor";
+import { PageTransition } from "@/components/site/PageTransition";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
