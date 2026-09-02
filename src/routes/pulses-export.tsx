@@ -8,9 +8,9 @@ import pSunflower from "@/assets/p-sunflower.jpg";
 export const Route = createFileRoute("/pulses-export")({
   head: () => ({
     meta: [
-      { title: "Pulses Export — ZYGC Export PLC" },
+      { title: "Pulses Export — ZYGC Global Trade" },
       { name: "description", content: "Ethiopian pulses export: chickpeas, green mung, white pea beans, kidney beans, horse beans and lentils for wholesalers and importers." },
-      { property: "og:title", content: "Pulses Export — ZYGC Export PLC" },
+      { property: "og:title", content: "Pulses Export — ZYGC Global Trade" },
       { property: "og:description", content: "Chickpeas, mung beans, kidney beans, white pea beans, horse beans and lentils prepared for wholesalers, importers and food distributors." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

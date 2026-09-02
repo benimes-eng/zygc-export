@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="bg-forest-deep text-cream">
       <div className="max-w-6xl mx-auto px-6 py-16 grid gap-10 sm:grid-cols-2 md:grid-cols-4">
         <div>
-          <div className="font-serif text-2xl mb-3">ZYGC Construction PLC</div>
+          <div className="font-serif text-2xl mb-3">ZYGC Global Trade</div>
           <p className="text-cream/70 text-sm leading-relaxed">
             A multi-sector Ethiopian enterprise in construction, agricultural exports,
             industrial machinery imports and pharmaceutical supply. Established November 23, 2017.
@@ -41,7 +41,7 @@ export function Footer() {
       </div>
       <div className="border-t border-cream/10">
         <div className="max-w-6xl mx-auto px-6 py-6 text-cream/50 text-xs">
-          © {new Date().getFullYear()} ZYGC Construction PLC. Construction, global trade and medical supply.
+          © {new Date().getFullYear()} ZYGC Global Trade. Construction, global trade and medical supply.
         </div>
       </div>
     </footer>

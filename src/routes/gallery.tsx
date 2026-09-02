@@ -18,9 +18,9 @@ import k from "@/assets/cta-bg.jpg";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — ZYGC Export PLC" },
+      { title: "Gallery — ZYGC Global Trade" },
       { name: "description", content: "A visual overview of livestock, oil seeds, pulses and export handling across ZYGC's supply categories." },
-      { property: "og:title", content: "Gallery — ZYGC Export PLC" },
+      { property: "og:title", content: "Gallery — ZYGC Global Trade" },
       { property: "og:description", content: "Visual overview of ZYGC's export categories and supply." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
