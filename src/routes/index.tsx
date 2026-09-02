@@ -238,43 +238,63 @@ function Hero() {
 }
 
 function About() {
+  const pillars = [
+    {
+      n: "01",
+      t: "Our Vision",
+      d: "To be a leading, multi-sector enterprise in East Africa, recognized for engineering world-class infrastructure and driving global trade that fosters sustainable economic growth, food security and advanced healthcare solutions.",
+    },
+    {
+      n: "02",
+      t: "Our Mission",
+      d: "To deliver high-quality construction, engineering and project management services while operating an agile import-export network that supplies essential industrial machinery, advanced medical goods and premium agricultural products to the global market.",
+    },
+    {
+      n: "03",
+      t: "Our Core Values",
+      d: "Quality First. Synergy. Reliability. National Impact — contributing to Ethiopia's industrialization, foreign currency generation and healthcare accessibility.",
+    },
+  ];
   return (
-    <section className="max-w-6xl mx-auto px-6 py-20 sm:py-28 grid md:grid-cols-2 gap-12 items-start">
-      <Reveal>
-        <img src={aboutImg} alt="Ethiopian highland farmland" loading="lazy" width={1000} height={1200}
-             className="rounded-3xl w-full h-auto object-cover float-slow" />
-      </Reveal>
-      <div>
+    <section className="max-w-6xl mx-auto px-6 py-20 sm:py-28">
+      <div className="grid md:grid-cols-2 gap-12 items-start">
         <Reveal>
-          <div className="eyebrow mb-4">About ZYGC Global Trade</div>
+          <img src={aboutImg} alt="Ethiopian highland farmland" loading="lazy" width={1000} height={1200}
+               className="rounded-3xl w-full h-auto object-cover float-slow" />
         </Reveal>
-        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight text-ink">
-          <SplitReveal text="A multi-sector enterprise engineering infrastructure and driving global trade." />
-        </h2>
-        <Reveal delay={200}>
-          <p className="mt-6 text-muted-ink leading-relaxed">
-            Established on November 23, 2017 and based in Bole, Addis Ababa, ZYGC Global Trade
-            operates as a multi-sector enterprise in Ethiopia. We combine our core engineering
-            foundations with a robust Import-Export division, leveraging global trade networks to
-            import heavy industrial goods and pharmaceuticals while exporting highly valuable
-            Ethiopian agricultural and livestock commodities.
-          </p>
-        </Reveal>
-
-        <div className="mt-8 space-y-4">
-          {[
-            ["Vision", "To be a leading, multi-sector enterprise in East Africa, recognized for engineering world-class infrastructure and driving global trade that fosters sustainable economic growth, food security and advanced healthcare solutions."],
-            ["Mission", "To deliver high-quality construction, engineering and project management services while operating an agile import-export network that supplies essential industrial machinery, advanced medical goods and premium agricultural products to the global market."],
-            ["Core Values", "Quality First. Synergy. Reliability. National Impact — contributing to Ethiopia's industrialization, foreign currency generation and healthcare accessibility."],
-          ].map(([t, d], i) => (
-            <Reveal key={t} delay={i * 100}>
-              <div className="card-soft p-6">
-                <div className="font-semibold text-forest">{t}</div>
-                <p className="text-muted-ink text-sm mt-2 leading-relaxed">{d}</p>
-              </div>
-            </Reveal>
-          ))}
+        <div>
+          <Reveal>
+            <div className="eyebrow mb-4">About ZYGC Global Trade</div>
+          </Reveal>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight text-ink">
+            <SplitReveal text="A multi-sector enterprise engineering infrastructure and driving global trade." />
+          </h2>
+          <Reveal delay={200}>
+            <p className="mt-6 text-muted-ink leading-relaxed">
+              Established on November 23, 2017 and based in Bole, Addis Ababa, ZYGC Global Trade
+              operates as a multi-sector enterprise in Ethiopia. We combine our core engineering
+              foundations with a robust Import-Export division, leveraging global trade networks to
+              import heavy industrial goods and pharmaceuticals while exporting highly valuable
+              Ethiopian agricultural and livestock commodities.
+            </p>
+          </Reveal>
         </div>
+      </div>
+
+      <div className="mt-14 sm:mt-20 grid md:grid-cols-3 gap-5 sm:gap-6">
+        {pillars.map((p, i) => (
+          <Reveal key={p.t} delay={i * 120}>
+            <div className="card-soft relative overflow-hidden p-8 h-full group hover:-translate-y-1 transition-transform duration-500">
+              <div className="absolute -top-4 -right-2 font-serif text-[6rem] leading-none text-forest/5 select-none group-hover:text-gold/15 transition-colors duration-500">
+                {p.n}
+              </div>
+              <div className="text-gold text-[0.68rem] tracking-[0.3em] uppercase font-semibold">{p.n}</div>
+              <h3 className="font-serif text-2xl sm:text-3xl text-forest mt-3">{p.t}</h3>
+              <div className="mt-4 h-px w-10 bg-gold/60 group-hover:w-16 transition-all duration-500" />
+              <p className="text-muted-ink text-sm mt-4 leading-relaxed">{p.d}</p>
+            </div>
+          </Reveal>
+        ))}
       </div>
     </section>
   );
