@@ -27,11 +27,13 @@ export function Reveal({
           if (e.isIntersecting) {
             el.style.opacity = "1";
             el.style.transform = "translate3d(0,0,0)";
-            io.unobserve(el);
+          } else {
+            el.style.opacity = "0";
+            el.style.transform = `translate3d(0, ${y}px, 0)`;
           }
         });
       },
-      { threshold: 0.15 },
+      { threshold: 0.15, rootMargin: "0px 0px -5% 0px" },
     );
     io.observe(el);
     return () => io.disconnect();
@@ -70,7 +72,8 @@ export function SplitReveal({
         entries.forEach((e) => {
           if (e.isIntersecting) {
             spans.forEach((s) => (s.style.transform = "translate3d(0,0,0)"));
-            io.unobserve(el);
+          } else {
+            spans.forEach((s) => (s.style.transform = "translate3d(0, 110%, 0)"));
           }
         });
       },
