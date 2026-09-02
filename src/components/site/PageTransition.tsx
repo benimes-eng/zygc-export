@@ -16,25 +16,27 @@ export function PageTransition() {
       timers.current = [];
     };
 
-    let lastPath = router.state.location.pathname;
-
-    const unsub = router.subscribe("onResolved", ({ toLocation }) => {
-      if (toLocation.pathname === lastPath) return;
-      lastPath = toLocation.pathname;
+    const unsubStart = router.subscribe("onBeforeNavigate", ({ fromLocation, toLocation }) => {
+      if (fromLocation?.pathname === toLocation.pathname) return;
       clear();
       setPhase("cover");
+    });
+
+    const unsubEnd = router.subscribe("onResolved", () => {
+      clear();
       window.scrollTo({ top: 0, behavior: "auto" });
       timers.current.push(
-        window.setTimeout(() => setPhase("uncover"), 650) as unknown as number,
+        window.setTimeout(() => setPhase("uncover"), 450) as unknown as number,
       );
       timers.current.push(
-        window.setTimeout(() => setPhase("idle"), 1450) as unknown as number,
+        window.setTimeout(() => setPhase("idle"), 1250) as unknown as number,
       );
     });
 
     return () => {
       clear();
-      unsub();
+      unsubStart();
+      unsubEnd();
     };
   }, [router]);
 
