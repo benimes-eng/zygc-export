@@ -26,12 +26,12 @@ export function PageLoader() {
     <div className="fixed inset-0 z-[100] pointer-events-none">
       {/* Cream base */}
       <div
-        className="absolute inset-0 bg-cream transition-transform duration-[1100ms] ease-[cubic-bezier(0.85,0,0.15,1)]"
+        className="absolute inset-0 bg-cream transition-transform duration-[600ms] ease-[cubic-bezier(0.85,0,0.15,1)]"
         style={{ transform: reveal ? "translateY(-100%)" : "translateY(0)" }}
       />
       {/* Forest curtain behind (revealed second) */}
       <div
-        className="absolute inset-0 bg-forest-deep transition-transform duration-[1100ms] ease-[cubic-bezier(0.85,0,0.15,1)] delay-[150ms]"
+        className="absolute inset-0 bg-forest-deep transition-transform duration-[600ms] ease-[cubic-bezier(0.85,0,0.15,1)] delay-[80ms]"
         style={{ transform: reveal ? "translateY(-100%)" : "translateY(0)" }}
       />
       {/* Brand */}

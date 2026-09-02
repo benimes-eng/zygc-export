@@ -195,13 +195,13 @@ function Hero() {
               <div className="eyebrow mb-6">Construction • Global Trade • Medical Supply</div>
             </Reveal>
             <h1 className="font-serif text-white text-4xl sm:text-5xl md:text-7xl leading-[1.05] tracking-tight">
-              <SplitReveal text="Building Ethiopia And Connecting It To Global Markets" />
+              <SplitReveal text="From Ethiopian Soil To Every Shore Of The World" />
             </h1>
             <Reveal delay={400}>
               <p className="mt-6 sm:mt-8 text-white/80 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
-                ZYGC Global Trade combines engineering foundations with a diversified
-                import-export division: premium Ethiopian agricultural and livestock exports,
-                heavy machinery imports and essential pharmaceutical supply.
+                ZYGC Global Trade moves what matters — premium livestock, oil seeds and pulses
+                out to the world, and the machinery and medicine Ethiopia needs back home.
+                One partner. Every trade lane. Zero compromise.
               </p>
             </Reveal>
             <Reveal delay={600}>
