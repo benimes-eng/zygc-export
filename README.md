@@ -24,3 +24,32 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+## Deploy to Netlify
+
+This project is configured for Netlify deployment using Nitro with the `netlify` preset.
+
+### One-click setup
+
+1. Push this repository to GitHub.
+2. In [Netlify](https://app.netlify.com), choose **Add new site → Import an existing project**.
+3. Connect the `benimes-eng/zygc-export` repository.
+4. Netlify should auto-detect these build settings from `netlify.toml`:
+   - **Build command:** `npm run build`
+   - **Publish directory:** `dist`
+5. Deploy the site.
+
+### Environment variables
+
+Copy `.env.example` to `.env` for local development. On Netlify, add the same variables under **Site configuration → Environment variables**:
+
+| Variable | Required | Description |
+| --- | --- | --- |
+| `VITE_SITE_URL` | No | Public site URL (e.g. `https://zygc-export.netlify.app`) |
+
+### Local preview
+
+```sh
+npm run build
+npm run preview
+```
