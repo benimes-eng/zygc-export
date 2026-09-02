@@ -40,12 +40,14 @@ export function PageTransition() {
     };
   }, [router]);
 
-  if (phase === "idle") return null;
-
   const covered = phase === "cover";
 
   return (
-    <div className="fixed inset-0 z-[95] pointer-events-none">
+    <div
+      className="fixed inset-0 z-[95] pointer-events-none"
+      style={{ visibility: phase === "idle" ? "hidden" : "visible" }}
+      aria-hidden
+    >
       <div
         className="absolute inset-0 bg-forest-deep transition-transform duration-700 ease-[cubic-bezier(0.85,0,0.15,1)]"
         style={{ transform: covered ? "translateY(0)" : "translateY(-100%)" }}
