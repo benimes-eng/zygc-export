@@ -7,12 +7,12 @@ export function PageLoader() {
 
   useEffect(() => {
     if (seen) return;
-    const t1 = setTimeout(() => setPhase("hold"), 500);
-    const t2 = setTimeout(() => setPhase("reveal"), 1200);
+    const t1 = setTimeout(() => setPhase("hold"), 250);
+    const t2 = setTimeout(() => setPhase("reveal"), 700);
     const t3 = setTimeout(() => {
       setPhase("gone");
       try { sessionStorage.setItem("zygc_loader_seen", "1"); } catch {}
-    }, 2100);
+    }, 1300);
     return () => {
       clearTimeout(t1); clearTimeout(t2); clearTimeout(t3);
     };
@@ -41,7 +41,7 @@ export function PageLoader() {
         }`}
       >
         <div className="flex flex-col items-center gap-5">
-          <div className="text-gold text-[0.72rem] tracking-[0.4em] uppercase">ZYGC Export</div>
+          <div className="text-gold text-[0.72rem] tracking-[0.4em] uppercase">ZYGC Global Trade</div>
           <div className="overflow-hidden">
             <div
               className="font-serif text-cream text-4xl sm:text-6xl tracking-tight transition-transform duration-700 ease-out"

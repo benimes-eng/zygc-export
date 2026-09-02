@@ -3,7 +3,7 @@ import { MessageCircle } from "lucide-react";
 export function WhatsApp() {
   return (
     <a
-      href="https://wa.me/251911247873?text=Hello%20ZYGC%20Construction%20PLC%2C%20I%27d%20like%20to%20inquire%20about%20your%20export%20and%20import%20services."
+      href="https://wa.me/251911247873?text=Hello%20ZYGC%20Global%20Trade%2C%20I%27d%20like%20to%20inquire%20about%20your%20export%20and%20import%20services."
       target="_blank"
       rel="noreferrer"
       className="fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 rounded-full bg-[#25D366] text-white px-4 py-3 shadow-lg hover:brightness-110 hover:scale-105 transition-transform"
