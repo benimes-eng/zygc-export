@@ -126,6 +126,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <SmoothScroll />
       <CustomCursor />
+      <PageTransition />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>
