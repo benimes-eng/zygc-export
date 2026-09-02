@@ -33,7 +33,7 @@ export function Nav() {
         } backdrop-blur-xl backdrop-saturate-150`}
       >
         <Link to="/" className="font-serif text-base sm:text-xl text-forest tracking-tight pl-2">
-          ZYGC Construction PLC
+          ZYGC Global Trade
         </Link>
 
         <ul className="hidden md:flex items-center gap-1 text-sm text-ink/80">

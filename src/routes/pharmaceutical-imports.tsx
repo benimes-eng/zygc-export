@@ -6,9 +6,9 @@ import pharmaImg from "@/assets/cat-pharma.jpg";
 export const Route = createFileRoute("/pharmaceutical-imports")({
   head: () => ({
     meta: [
-      { title: "Pharmaceutical Imports — ZYGC Construction PLC" },
-      { name: "description", content: "ZYGC Construction PLC imports prescription and OTC pharmaceuticals into Ethiopia in cooperation with EFDA, supplying hospitals, pharmacies and NGOs." },
-      { property: "og:title", content: "Pharmaceutical Imports — ZYGC Construction PLC" },
+      { title: "Pharmaceutical Imports — ZYGC Global Trade" },
+      { name: "description", content: "ZYGC Global Trade imports prescription and OTC pharmaceuticals into Ethiopia in cooperation with EFDA, supplying hospitals, pharmacies and NGOs." },
+      { property: "og:title", content: "Pharmaceutical Imports — ZYGC Global Trade" },
       { property: "og:description", content: "Essential medicines sourced from certified international manufacturers, EFDA-compliant, distributed to hospitals, pharmacies and NGOs." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

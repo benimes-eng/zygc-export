@@ -8,9 +8,9 @@ import pCattle from "@/assets/p-cattle.jpg";
 export const Route = createFileRoute("/livestock-export")({
   head: () => ({
     meta: [
-      { title: "Livestock Export — ZYGC Export PLC" },
+      { title: "Livestock Export — ZYGC Global Trade" },
       { name: "description", content: "Ethiopian livestock export: cattle, sheep, goats and camels sourced through trusted farmer networks with veterinary inspection and shipment coordination." },
-      { property: "og:title", content: "Livestock Export — ZYGC Export PLC" },
+      { property: "og:title", content: "Livestock Export — ZYGC Global Trade" },
       { property: "og:description", content: "Cattle, sheep, goats and camels prepared for global buyers with veterinary certification and export documentation." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

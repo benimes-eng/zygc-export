@@ -26,9 +26,9 @@ import ctaBg from "@/assets/cta-bg.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ZYGC Construction PLC — Construction, Export & Import Ethiopia" },
-      { name: "description", content: "ZYGC Construction PLC is a multi-sector Ethiopian enterprise: construction and engineering, agricultural and livestock exports, machinery imports and pharmaceutical supply." },
-      { property: "og:title", content: "ZYGC Construction PLC — Construction, Export & Import" },
+      { title: "ZYGC Global Trade — Construction, Export & Import Ethiopia" },
+      { name: "description", content: "ZYGC Global Trade is a multi-sector Ethiopian enterprise: construction and engineering, agricultural and livestock exports, machinery imports and pharmaceutical supply." },
+      { property: "og:title", content: "ZYGC Global Trade — Construction, Export & Import" },
       { property: "og:description", content: "Engineering, global trade and medical supply from Addis Ababa. Established 2017." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -199,7 +199,7 @@ function Hero() {
             </h1>
             <Reveal delay={400}>
               <p className="mt-6 sm:mt-8 text-white/80 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
-                ZYGC Construction PLC combines engineering foundations with a diversified
+                ZYGC Global Trade combines engineering foundations with a diversified
                 import-export division: premium Ethiopian agricultural and livestock exports,
                 heavy machinery imports and essential pharmaceutical supply.
               </p>
@@ -246,14 +246,14 @@ function About() {
       </Reveal>
       <div>
         <Reveal>
-          <div className="eyebrow mb-4">About ZYGC Construction PLC</div>
+          <div className="eyebrow mb-4">About ZYGC Global Trade</div>
         </Reveal>
         <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight text-ink">
           <SplitReveal text="A multi-sector enterprise engineering infrastructure and driving global trade." />
         </h2>
         <Reveal delay={200}>
           <p className="mt-6 text-muted-ink leading-relaxed">
-            Established on November 23, 2017 and based in Bole, Addis Ababa, Z Y G C Construction PLC
+            Established on November 23, 2017 and based in Bole, Addis Ababa, ZYGC Global Trade
             operates as a multi-sector enterprise in Ethiopia. We combine our core engineering
             foundations with a robust Import-Export division, leveraging global trade networks to
             import heavy industrial goods and pharmaceuticals while exporting highly valuable

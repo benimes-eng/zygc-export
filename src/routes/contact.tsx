@@ -7,9 +7,9 @@ import { MessageCircle, FileText, Send } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — ZYGC Export PLC" },
+      { title: "Contact — ZYGC Global Trade" },
       { name: "description", content: "Start an export inquiry for Ethiopian livestock, oil seeds and pulses. Our export team will follow up with next steps." },
-      { property: "og:title", content: "Contact — ZYGC Export PLC" },
+      { property: "og:title", content: "Contact — ZYGC Global Trade" },
       { property: "og:description", content: "Start an export inquiry for Ethiopian livestock, oil seeds and pulses." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -25,7 +25,7 @@ function Contact() {
       <section className="pt-36 pb-16 px-6 max-w-4xl mx-auto text-center">
         <div className="eyebrow mb-4">Contact</div>
         <h1 className="font-serif text-4xl md:text-6xl leading-tight text-ink">
-          Start an export inquiry with ZYGC Export PLC.
+          Start an export inquiry with ZYGC Global Trade.
         </h1>
         <p className="mt-6 text-muted-ink max-w-2xl mx-auto">
           Tell us what you need to source, your destination market, expected volume and required documentation.

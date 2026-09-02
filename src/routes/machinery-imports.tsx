@@ -7,9 +7,9 @@ import constructionImg from "@/assets/cat-construction.jpg";
 export const Route = createFileRoute("/machinery-imports")({
   head: () => ({
     meta: [
-      { title: "Machinery Imports — ZYGC Construction PLC" },
-      { name: "description", content: "ZYGC Construction PLC imports excavators, bulldozers, wheel loaders, tower cranes, industrial plants and mechanized farming equipment into Ethiopia." },
-      { property: "og:title", content: "Machinery Imports — ZYGC Construction PLC" },
+      { title: "Machinery Imports — ZYGC Global Trade" },
+      { name: "description", content: "ZYGC Global Trade imports excavators, bulldozers, wheel loaders, tower cranes, industrial plants and mechanized farming equipment into Ethiopia." },
+      { property: "og:title", content: "Machinery Imports — ZYGC Global Trade" },
       { property: "og:description", content: "Heavy construction machinery, industrial plants, farming equipment and project spare parts imported for the Ethiopian market." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

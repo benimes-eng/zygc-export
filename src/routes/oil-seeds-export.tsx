@@ -8,9 +8,9 @@ import pSunflower from "@/assets/p-sunflower.jpg";
 export const Route = createFileRoute("/oil-seeds-export")({
   head: () => ({
     meta: [
-      { title: "Oil Seeds Export — ZYGC Export PLC" },
+      { title: "Oil Seeds Export — ZYGC Global Trade" },
       { name: "description", content: "Ethiopian oil seeds export: sesame, Niger seed, soybean, linseed, sunflower and groundnuts prepared for bulk international trade." },
-      { property: "og:title", content: "Oil Seeds Export — ZYGC Export PLC" },
+      { property: "og:title", content: "Oil Seeds Export — ZYGC Global Trade" },
       { property: "og:description", content: "Sesame, Niger seed, sunflower, flaxseed, castor seed and groundnuts handled through careful sourcing, cleaning and shipment documentation." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
