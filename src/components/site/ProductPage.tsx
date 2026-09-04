@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
@@ -24,7 +25,7 @@ export interface SupportItem {
 
 export interface ProductPageProps {
   eyebrow: string;
-  heroImg: string;
+  heroImg: string | string[];
   title: string;
   intro: string;
   highlights: { title: string; desc: string }[];
@@ -39,6 +40,14 @@ export interface ProductPageProps {
 
 export function ProductPage(p: ProductPageProps) {
   const bgRef = useParallax<HTMLDivElement>(0.3);
+  const slides = Array.isArray(p.heroImg) ? p.heroImg : [p.heroImg];
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => {
+    if (slides.length < 2) return;
+    const id = window.setInterval(() => setSlide((i) => (i + 1) % slides.length), 4500);
+    return () => window.clearInterval(id);
+  }, [slides.length]);
   return (
     <div className="min-h-screen bg-cream overflow-x-hidden">
       <PageLoader />
@@ -47,11 +56,21 @@ export function ProductPage(p: ProductPageProps) {
       {/* Hero */}
       <section className="pt-20 sm:pt-24">
         <div className="relative overflow-hidden min-h-[560px] sm:min-h-[640px] flex items-end">
-          <div
-            ref={bgRef}
-            className="absolute inset-x-0 -top-24 -bottom-24 bg-cover bg-center will-change-transform"
-            style={{ backgroundImage: `url(${p.heroImg})` }}
-          />
+          <div ref={bgRef} className="absolute inset-x-0 -top-24 -bottom-24 will-change-transform">
+            {slides.map((src, i) => (
+              <div
+                key={src + i}
+                className="absolute inset-0 bg-cover bg-center transition-opacity duration-[1400ms] ease-out"
+                style={{
+                  backgroundImage: `url(${src})`,
+                  opacity: i === slide ? 1 : 0,
+                  transform: i === slide ? "scale(1.06)" : "scale(1)",
+                  transitionProperty: "opacity, transform",
+                  transitionDuration: "1400ms, 6000ms",
+                }}
+              />
+            ))}
+          </div>
           <div className="absolute inset-0 bg-gradient-to-b from-forest-deep/40 via-forest-deep/60 to-forest-deep/90" />
           <Particles className="absolute inset-0 w-full h-full" count={35} />
 

@@ -23,8 +23,8 @@ function PulsesPage() {
   return (
     <ProductPage
       eyebrow="Pulses Export"
-      heroImg={heroImg}
-      title="Premium pulses supplied for wholesalers and distributors."
+      heroImg={[heroImg, pSesame, pNiger, pSunflower]}
+      title="Ethiopia's finest pulses, graded for the world's tables."
       intro="Chickpeas, green mung, white pea beans, kidney beans and lentils prepared for wholesalers, importers and food distributors."
       highlights={[
         { title: "Available Varieties", desc: "Chickpeas, green mung, white pea beans, kidney beans and lentils." },

@@ -41,8 +41,8 @@ export function PageTransition() {
     clear();
     window.scrollTo({ top: 0, behavior: "auto" });
     setPhase((p) => (p === "cover" ? p : "covered"));
-    timers.current.push(window.setTimeout(() => setPhase("reveal"), 200));
-    timers.current.push(window.setTimeout(() => setPhase("idle"), 800));
+    timers.current.push(window.setTimeout(() => setPhase("reveal"), 90));
+    timers.current.push(window.setTimeout(() => setPhase("idle"), 460));
     return clear;
   }, [pathname]);
 
@@ -57,18 +57,18 @@ export function PageTransition() {
     >
       <div
         className={`absolute inset-0 bg-forest-deep ${
-          instant ? "" : "transition-transform duration-500 ease-[cubic-bezier(0.85,0,0.15,1)]"
+          instant ? "" : "transition-transform duration-300 ease-[cubic-bezier(0.85,0,0.15,1)]"
         }`}
         style={{ transform: down ? "translateY(0)" : "translateY(-100%)" }}
       />
       <div
         className={`absolute inset-0 bg-cream ${
-          instant ? "" : "transition-transform duration-500 ease-[cubic-bezier(0.85,0,0.15,1)] delay-[60ms]"
+          instant ? "" : "transition-transform duration-300 ease-[cubic-bezier(0.85,0,0.15,1)] delay-[40ms]"
         }`}
         style={{ transform: down ? "translateY(0)" : "translateY(-100%)" }}
       />
       <div
-        className={`absolute inset-0 flex items-center justify-center transition-opacity duration-200 ${
+        className={`absolute inset-0 flex items-center justify-center transition-opacity duration-150 ${
           down ? "opacity-100" : "opacity-0"
         }`}
       >

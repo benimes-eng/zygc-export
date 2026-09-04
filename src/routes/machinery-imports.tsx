@@ -22,8 +22,8 @@ function MachineryPage() {
   return (
     <ProductPage
       eyebrow="Industrial & Machinery Imports"
-      heroImg={heroImg}
-      title="Heavy machinery and industrial equipment imported for Ethiopian projects."
+      heroImg={[heroImg, machineryImg, constructionImg]}
+      title="The heavy iron that builds a nation."
       intro="We import heavy-duty machinery, industrial plants and technical assets to fuel local infrastructure development and supply the Ethiopian market."
       highlights={[
         { title: "Construction Machinery", desc: "Excavators, bulldozers, wheel loaders and tower cranes for large-scale works." },

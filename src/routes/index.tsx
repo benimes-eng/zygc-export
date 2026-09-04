@@ -15,6 +15,9 @@ import aboutImg from "@/assets/about.jpg";
 import catLivestock from "@/assets/cat-livestock.jpg";
 import catOilseeds from "@/assets/cat-oilseeds.jpg";
 import catPulses from "@/assets/cat-pulses.jpg";
+import catMachinery from "@/assets/cat-machinery.jpg";
+import catConstruction from "@/assets/cat-construction.jpg";
+import catPharma from "@/assets/cat-pharma.jpg";
 import pGoats from "@/assets/p-goats.jpg";
 import pSheep from "@/assets/p-sheep.jpg";
 import pCattle from "@/assets/p-cattle.jpg";
@@ -305,6 +308,8 @@ function Categories() {
     { img: catLivestock, tag: "Available Livestock • Vet Inspected", title: "Livestock" as const, desc: "Healthy cattle prepared through veterinary inspection, quality control and export documentation." },
     { img: catOilseeds, tag: "Sesame • Niger • Soybean", title: "Oil Seeds" as const, desc: "Sesame, Niger seed, soybean, linseed and sunflower with cleaning, sorting and shipment support." },
     { img: catPulses, tag: "Chickpeas • Mung • Beans", title: "Pulses" as const, desc: "Chickpeas, green mung, white pea beans, kidney beans and lentils for wholesalers and importers." },
+    { img: catMachinery, tag: "Excavators • Cranes • Plants", title: "Machinery" as const, desc: "Excavators, bulldozers, wheel loaders, tower cranes and industrial plants imported for Ethiopian projects." },
+    { img: catPharma, tag: "EFDA Compliant • B2B Supply", title: "Pharmaceuticals" as const, desc: "Prescription and over-the-counter medicines imported for hospitals, pharmacies and NGO health programs." },
   ];
   return (
     <section id="categories" className="sm:px-4 scroll-mt-24">
@@ -313,10 +318,10 @@ function Categories() {
         <Particles className="absolute inset-0 w-full h-full" count={35} />
         <div className="relative text-center max-w-2xl mx-auto">
           <Reveal>
-            <div className="eyebrow mb-4">Export Categories</div>
+            <div className="eyebrow mb-4">Our Divisions</div>
           </Reveal>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight">
-            <SplitReveal text="Premium agricultural products prepared for international markets." />
+            <SplitReveal text="Premium exports and trusted imports across five divisions." />
           </h2>
         </div>
         <div className="relative mt-10 sm:mt-14 grid md:grid-cols-3 gap-6" style={{ perspective: "1200px" }}>
@@ -351,6 +356,12 @@ function Catalog() {
     { img: pSesame, t: "Sesame Seeds", d: "Export-grade sesame seeds for food processors and traders." },
     { img: pNiger, t: "Niger Seed", d: "Niger seed sourced for oil extraction and bird feed supply chains." },
     { img: pSunflower, t: "Sunflower Seed", d: "Sunflower seed supply for edible oil and processing customers." },
+    { img: pSesame, t: "Chickpeas & Pulses", d: "Chickpeas, mung beans, kidney beans and lentils for food distributors." },
+    { img: catMachinery, t: "Construction Machinery", d: "Excavators, bulldozers and wheel loaders imported for project sites." },
+    { img: catConstruction, t: "Tower Cranes", d: "Tower cranes for high-rise and vertical construction projects." },
+    { img: catMachinery, t: "Farming Equipment", d: "Tractors and mechanized equipment for agricultural operations." },
+    { img: catPharma, t: "Prescription Medicines", d: "EFDA-registered medicines supplied to hospitals and pharmacies." },
+    { img: catPharma, t: "OTC & Hospital Supply", d: "Over-the-counter products and bulk hospital supply programs." },
   ];
   return (
     <section className="max-w-6xl mx-auto px-6 py-20 sm:py-28">
