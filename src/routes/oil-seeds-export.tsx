@@ -23,8 +23,8 @@ function OilSeedsPage() {
   return (
     <ProductPage
       eyebrow="Oil Seeds Export"
-      heroImg={heroImg}
-      title="Export-grade oil seeds, cleaned, sorted and shipment-ready."
+      heroImg={[heroImg, pSesame, pNiger, pSunflower]}
+      title="The golden harvest the world keeps coming back for."
       intro="Sesame, Niger seed, soybean, linseed and sunflower handled through careful sourcing, cleaning, sorting, packaging and export documentation."
       highlights={[
         { title: "Available Varieties", desc: "Sesame, Niger seed, soybean, linseed and sunflower for global commodity buyers." },

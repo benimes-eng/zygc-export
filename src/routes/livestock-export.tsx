@@ -23,8 +23,8 @@ function LivestockPage() {
   return (
     <ProductPage
       eyebrow="Livestock Export"
-      heroImg={heroImg}
-      title="Healthy livestock, sourced with care, shipped with certainty."
+      heroImg={[heroImg, pCattle, pSheep, pGoats]}
+      title="From Ethiopian highlands to the world's markets."
       intro="Healthy cattle sourced through trusted farmer networks, inspected for quality, supported with veterinary documentation and prepared for global buyers."
       highlights={[
         { title: "Available Livestock", desc: "Cattle prepared for importers, processors and regional livestock buyers." },

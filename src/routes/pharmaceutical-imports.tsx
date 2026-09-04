@@ -21,8 +21,8 @@ function PharmaPage() {
   return (
     <ProductPage
       eyebrow="Pharmaceutical Imports"
-      heroImg={heroImg}
-      title="Essential medicines imported to strengthen Ethiopia's healthcare sector."
+      heroImg={[heroImg, pharmaImg]}
+      title="Medicine that reaches every corner of Ethiopia."
       intro="Our medical supply wing procures prescription and over-the-counter pharmaceuticals from globally certified manufacturers, clears them through EFDA and distributes them to healthcare networks nationwide."
       highlights={[
         { title: "Sourcing Essential Medicines", desc: "Prescription and OTC pharmaceuticals procured from globally certified international manufacturers." },
