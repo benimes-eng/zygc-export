@@ -51,8 +51,8 @@ export function Nav() {
                   <Link to="/livestock-export" className="block px-3 py-2 rounded-lg text-sm hover:bg-forest/5 hover:text-forest">Livestock Export</Link>
                   <Link to="/oil-seeds-export" className="block px-3 py-2 rounded-lg text-sm hover:bg-forest/5 hover:text-forest">Oil Seeds Export</Link>
                   <Link to="/pulses-export" className="block px-3 py-2 rounded-lg text-sm hover:bg-forest/5 hover:text-forest">Pulses Export</Link>
-                  <Link to="/machinery-imports" className="block px-3 py-2 rounded-lg text-sm hover:bg-forest/5 hover:text-forest">Machinery Imports</Link>
-                  <Link to="/pharmaceutical-imports" className="block px-3 py-2 rounded-lg text-sm hover:bg-forest/5 hover:text-forest">Pharmaceutical Imports</Link>
+                  <Link to="/machinery-imports" className="block px-3 py-2 rounded-lg text-sm hover:bg-forest/5 hover:text-forest">Construction Machines & Spare Parts</Link>
+                  <Link to="/pharmaceutical-imports" className="block px-3 py-2 rounded-lg text-sm hover:bg-forest/5 hover:text-forest">Medicine & Pharmaceutical Equipment</Link>
                 </div>
               </div>
             )}
@@ -83,8 +83,8 @@ export function Nav() {
             <li><Link onClick={() => setOpen(false)} to="/livestock-export" className="block px-3 py-2 rounded-xl hover:bg-forest/5">Livestock Export</Link></li>
             <li><Link onClick={() => setOpen(false)} to="/oil-seeds-export" className="block px-3 py-2 rounded-xl hover:bg-forest/5">Oil Seeds Export</Link></li>
             <li><Link onClick={() => setOpen(false)} to="/pulses-export" className="block px-3 py-2 rounded-xl hover:bg-forest/5">Pulses Export</Link></li>
-            <li><Link onClick={() => setOpen(false)} to="/machinery-imports" className="block px-3 py-2 rounded-xl hover:bg-forest/5">Machinery Imports</Link></li>
-            <li><Link onClick={() => setOpen(false)} to="/pharmaceutical-imports" className="block px-3 py-2 rounded-xl hover:bg-forest/5">Pharmaceutical Imports</Link></li>
+            <li><Link onClick={() => setOpen(false)} to="/machinery-imports" className="block px-3 py-2 rounded-xl hover:bg-forest/5">Construction Machines & Spare Parts</Link></li>
+            <li><Link onClick={() => setOpen(false)} to="/pharmaceutical-imports" className="block px-3 py-2 rounded-xl hover:bg-forest/5">Medicine & Pharmaceutical Equipment</Link></li>
             <li className="border-t border-hairline my-2" />
             <li><a onClick={() => setOpen(false)} href="/#process" className="block px-3 py-3 rounded-xl hover:bg-forest/5">Process</a></li>
             <li><a onClick={() => setOpen(false)} href="/#quality" className="block px-3 py-3 rounded-xl hover:bg-forest/5">Quality</a></li>

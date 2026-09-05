@@ -6,7 +6,7 @@ import pharmaImg from "@/assets/cat-pharma.jpg";
 export const Route = createFileRoute("/pharmaceutical-imports")({
   head: () => ({
     meta: [
-      { title: "Pharmaceutical Imports — ZYGC Global Trade" },
+      { title: "Medicine & Pharmaceutical Equipment — ZYGC Global Trade" },
       { name: "description", content: "ZYGC Global Trade imports prescription and OTC pharmaceuticals into Ethiopia in cooperation with EFDA, supplying hospitals, pharmacies and NGOs." },
       { property: "og:title", content: "Pharmaceutical Imports — ZYGC Global Trade" },
       { property: "og:description", content: "Essential medicines sourced from certified international manufacturers, EFDA-compliant, distributed to hospitals, pharmacies and NGOs." },
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/pharmaceutical-imports")({
 function PharmaPage() {
   return (
     <ProductPage
-      eyebrow="Pharmaceutical Imports"
+      eyebrow="Medicine & Pharmaceutical Equipment"
       heroImg={[heroImg, pharmaImg]}
       title="Medicine that reaches every corner of Ethiopia."
       intro="Our medical supply wing procures prescription and over-the-counter pharmaceuticals from globally certified manufacturers, clears them through EFDA and distributes them to healthcare networks nationwide."

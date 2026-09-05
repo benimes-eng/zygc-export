@@ -22,8 +22,8 @@ export function Footer() {
         <div>
           <div className="text-gold text-xs tracking-[0.18em] uppercase font-semibold mb-4">Imports & Company</div>
           <ul className="space-y-2 text-cream/80 text-sm">
-            <li><Link to="/machinery-imports" className="hover:text-gold">Machinery Imports</Link></li>
-            <li><Link to="/pharmaceutical-imports" className="hover:text-gold">Pharmaceutical Imports</Link></li>
+            <li><Link to="/machinery-imports" className="hover:text-gold">Construction Machines & Spare Parts</Link></li>
+            <li><Link to="/pharmaceutical-imports" className="hover:text-gold">Medicine & Pharmaceutical Equipment</Link></li>
             <li><a href="/#quality" className="hover:text-gold">Quality & Compliance</a></li>
             <li><Link to="/gallery" className="hover:text-gold">Gallery</Link></li>
             <li><Link to="/contact" className="hover:text-gold">Contact</Link></li>
