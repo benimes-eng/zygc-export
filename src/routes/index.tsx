@@ -25,6 +25,15 @@ import pSesame from "@/assets/p-sesame.jpg";
 import pNiger from "@/assets/p-niger.jpg";
 import pSunflower from "@/assets/p-sunflower.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
+import uLoader from "@/assets/u-loader.jpg.asset.json";
+import uExcavator from "@/assets/u-excavator.jpg.asset.json";
+import uHitachi from "@/assets/u-hitachi.jpg.asset.json";
+import uDevelon from "@/assets/u-develon.jpg.asset.json";
+import uSheep1 from "@/assets/u-sheep1.jpg.asset.json";
+import uSheep2 from "@/assets/u-sheep2.jpg.asset.json";
+import uFlock from "@/assets/u-flock.jpg.asset.json";
+import uFlock2 from "@/assets/u-flock2.jpg.asset.json";
+import uFeed from "@/assets/u-feed.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,8 +53,8 @@ const categoryLinks = {
   Livestock: "/livestock-export",
   "Oil Seeds": "/oil-seeds-export",
   Pulses: "/pulses-export",
-  Machinery: "/machinery-imports",
-  Pharmaceuticals: "/pharmaceutical-imports",
+  "Construction Machines & Spare Parts": "/machinery-imports",
+  "Medicine & Pharmaceutical Equipment": "/pharmaceutical-imports",
 } as const;
 
 
