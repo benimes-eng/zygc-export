@@ -314,11 +314,11 @@ function About() {
 
 function Categories() {
   const items = [
-    { img: catLivestock, tag: "Available Livestock • Vet Inspected", title: "Livestock" as const, desc: "Healthy cattle prepared through veterinary inspection, quality control and export documentation." },
+    { img: uFlock.url, tag: "Cattle • Sheep • Goats • Camels", title: "Livestock" as const, desc: "Healthy cattle, sheep, goats and camels prepared through veterinary inspection, quality control and export documentation." },
     { img: catOilseeds, tag: "Sesame • Niger • Soybean", title: "Oil Seeds" as const, desc: "Sesame, Niger seed, soybean, linseed and sunflower with cleaning, sorting and shipment support." },
     { img: catPulses, tag: "Chickpeas • Mung • Beans", title: "Pulses" as const, desc: "Chickpeas, green mung, white pea beans, kidney beans and lentils for wholesalers and importers." },
-    { img: catMachinery, tag: "Excavators • Cranes • Plants", title: "Machinery" as const, desc: "Excavators, bulldozers, wheel loaders, tower cranes and industrial plants imported for Ethiopian projects." },
-    { img: catPharma, tag: "EFDA Compliant • B2B Supply", title: "Pharmaceuticals" as const, desc: "Prescription and over-the-counter medicines imported for hospitals, pharmacies and NGO health programs." },
+    { img: uLoader.url, tag: "Excavators • Loaders • Spare Parts", title: "Construction Machines & Spare Parts" as const, desc: "Excavators, bulldozers, wheel loaders, tower cranes and genuine spare parts imported for Ethiopian projects." },
+    { img: catPharma, tag: "EFDA Compliant • B2B Supply", title: "Medicine & Pharmaceutical Equipment" as const, desc: "Prescription and OTC medicines plus medical equipment imported for hospitals, pharmacies and NGO health programs." },
   ];
   return (
     <section id="categories" className="sm:px-4 scroll-mt-24">
