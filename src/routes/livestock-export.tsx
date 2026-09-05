@@ -1,9 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProductPage } from "@/components/site/ProductPage";
-import heroImg from "@/assets/cat-livestock.jpg";
 import pGoats from "@/assets/p-goats.jpg";
-import pSheep from "@/assets/p-sheep.jpg";
 import pCattle from "@/assets/p-cattle.jpg";
+import uSheep1 from "@/assets/u-sheep1.jpg.asset.json";
+import uSheep2 from "@/assets/u-sheep2.jpg.asset.json";
+import uFlock from "@/assets/u-flock.jpg.asset.json";
+import uFlock2 from "@/assets/u-flock2.jpg.asset.json";
+import uFeed from "@/assets/u-feed.jpg.asset.json";
 
 export const Route = createFileRoute("/livestock-export")({
   head: () => ({
@@ -23,11 +26,11 @@ function LivestockPage() {
   return (
     <ProductPage
       eyebrow="Livestock Export"
-      heroImg={[heroImg, pCattle, pSheep, pGoats]}
+      heroImg={[uFlock2.url, uFlock.url, uSheep1.url, pCattle]}
       title="From Ethiopian highlands to the world's markets."
-      intro="Healthy cattle sourced through trusted farmer networks, inspected for quality, supported with veterinary documentation and prepared for global buyers."
+      intro="Healthy cattle, sheep, goats and camels sourced through trusted farmer networks, inspected for quality, supported with veterinary documentation and prepared for global buyers."
       highlights={[
-        { title: "Available Livestock", desc: "Cattle prepared for importers, processors and regional livestock buyers." },
+        { title: "Available Livestock", desc: "Cattle, sheep, goats and camels prepared for importers, processors and regional livestock buyers." },
         { title: "Quality Standards", desc: "Selection, quarantine coordination, veterinary inspection and buyer-specific checks." },
         { title: "Documentation", desc: "Veterinary certificates, export documents, packing details and shipment communication." },
       ]}
@@ -35,11 +38,11 @@ function LivestockPage() {
       itemsSubheading="Browse the current livestock categories prepared for sourcing, inspection, documentation, and shipment coordination."
       items={[
         { img: pGoats, title: "Live Goats", desc: "Hardy live goats selected from trusted supply networks.", note: "Buyer-specific sourcing, health checks, and export preparation available." },
-        { img: pSheep, title: "Live Sheep", desc: "Healthy sheep supplied for meat and breeding markets.", note: "Batch coordination, quarantine support, and documentation workflow." },
-        { img: pCattle, title: "Cattle", desc: "Cattle sourcing for commercial buyers and livestock traders.", note: "Inspection-led procurement with shipment coordination." },
-        { img: pCattle, title: "Live Camels", desc: "Desert-adapted camels sourced for regional livestock buyers.", note: "Health screening, holding coordination, and export paperwork support." },
-        { img: pCattle, title: "Feeder Bulls", desc: "Strong feeder bulls selected for commercial livestock programs.", note: "Procurement, inspection, and buyer-specific lot preparation." },
-        { img: pGoats, title: "Breeding Heifers", desc: "Breeding heifers coordinated for buyers seeking herd development.", note: "Selection support, documentation, and shipment coordination available." },
+        { img: uSheep1.url, title: "Live Sheep", desc: "Healthy sheep supplied for meat and breeding markets.", note: "Batch coordination, quarantine support, and documentation workflow." },
+        { img: pCattle, title: "Cattle", desc: "Cows, bulls and oxen sourced for commercial buyers and livestock traders.", note: "Inspection-led procurement with shipment coordination." },
+        { img: uFlock.url, title: "Export Flocks", desc: "Large-volume sheep and goat flocks coordinated for regional buyers.", note: "Holding facilities, batching and health certification support." },
+        { img: uSheep2.url, title: "Breeding Stock", desc: "Breeding heifers and rams coordinated for herd development programs.", note: "Selection support, documentation, and shipment coordination available." },
+        { img: uFeed.url, title: "Feed & Nutrition", desc: "Balanced feed programs that keep export livestock in top condition.", note: "Quality feed sourcing and holding-period nutrition management." },
       ]}
       supportHeading="Livestock export support from selection to shipment."
       support={[

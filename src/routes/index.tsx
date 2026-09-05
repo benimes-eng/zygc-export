@@ -15,11 +15,9 @@ import aboutImg from "@/assets/about.jpg";
 import catLivestock from "@/assets/cat-livestock.jpg";
 import catOilseeds from "@/assets/cat-oilseeds.jpg";
 import catPulses from "@/assets/cat-pulses.jpg";
-import catMachinery from "@/assets/cat-machinery.jpg";
-import catConstruction from "@/assets/cat-construction.jpg";
 import catPharma from "@/assets/cat-pharma.jpg";
 import pGoats from "@/assets/p-goats.jpg";
-import pSheep from "@/assets/p-sheep.jpg";
+
 import pCattle from "@/assets/p-cattle.jpg";
 import pSesame from "@/assets/p-sesame.jpg";
 import pNiger from "@/assets/p-niger.jpg";
