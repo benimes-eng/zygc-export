@@ -341,7 +341,7 @@ function Categories() {
               </div>
               <div className="p-4 flex-1 flex flex-col">
                 <div className="text-gold text-[0.68rem] tracking-[0.16em] uppercase font-semibold">{c.tag}</div>
-                <h3 className="font-serif text-3xl mt-3 text-cream">{c.title}</h3>
+                <h3 className="font-serif text-2xl xl:text-3xl mt-3 text-cream">{c.title}</h3>
                 <p className="text-cream/70 text-sm mt-3 leading-relaxed flex-1">{c.desc}</p>
                 <Magnetic>
                   <Link to={categoryLinks[c.title]} className="text-gold text-sm mt-6 inline-flex items-center gap-2 hover:gap-3 transition-all">
@@ -360,17 +360,17 @@ function Categories() {
 function Catalog() {
   const items = [
     { img: pGoats, t: "Live Goats", d: "Hardy live goats selected from trusted supply networks." },
-    { img: pSheep, t: "Live Sheep", d: "Healthy sheep supplied for meat and breeding markets." },
+    { img: uSheep1.url, t: "Live Sheep", d: "Healthy sheep supplied for meat and breeding markets." },
     { img: pCattle, t: "Cattle", d: "Cattle sourcing for commercial buyers and livestock traders." },
     { img: pSesame, t: "Sesame Seeds", d: "Export-grade sesame seeds for food processors and traders." },
     { img: pNiger, t: "Niger Seed", d: "Niger seed sourced for oil extraction and bird feed supply chains." },
     { img: pSunflower, t: "Sunflower Seed", d: "Sunflower seed supply for edible oil and processing customers." },
     { img: pSesame, t: "Chickpeas & Pulses", d: "Chickpeas, mung beans, kidney beans and lentils for food distributors." },
-    { img: catMachinery, t: "Construction Machinery", d: "Excavators, bulldozers and wheel loaders imported for project sites." },
-    { img: catConstruction, t: "Tower Cranes", d: "Tower cranes for high-rise and vertical construction projects." },
-    { img: catMachinery, t: "Farming Equipment", d: "Tractors and mechanized equipment for agricultural operations." },
+    { img: uExcavator.url, t: "Excavators", d: "Tracked and wheeled excavators imported for earthworks and civil projects." },
+    { img: uLoader.url, t: "Wheel Loaders", d: "Wheel loaders for material handling on construction and quarry sites." },
+    { img: uHitachi.url, t: "Spare Parts", d: "Genuine spare parts and technical tools for heavy machinery fleets." },
     { img: catPharma, t: "Prescription Medicines", d: "EFDA-registered medicines supplied to hospitals and pharmacies." },
-    { img: catPharma, t: "OTC & Hospital Supply", d: "Over-the-counter products and bulk hospital supply programs." },
+    { img: catPharma, t: "Medical Equipment", d: "Pharmaceutical and medical equipment for hospitals, pharmacies and NGOs." },
   ];
   return (
     <section className="max-w-6xl mx-auto px-6 py-20 sm:py-28">
