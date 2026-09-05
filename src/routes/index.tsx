@@ -15,16 +15,23 @@ import aboutImg from "@/assets/about.jpg";
 import catLivestock from "@/assets/cat-livestock.jpg";
 import catOilseeds from "@/assets/cat-oilseeds.jpg";
 import catPulses from "@/assets/cat-pulses.jpg";
-import catMachinery from "@/assets/cat-machinery.jpg";
-import catConstruction from "@/assets/cat-construction.jpg";
 import catPharma from "@/assets/cat-pharma.jpg";
 import pGoats from "@/assets/p-goats.jpg";
-import pSheep from "@/assets/p-sheep.jpg";
+
 import pCattle from "@/assets/p-cattle.jpg";
 import pSesame from "@/assets/p-sesame.jpg";
 import pNiger from "@/assets/p-niger.jpg";
 import pSunflower from "@/assets/p-sunflower.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
+import uLoader from "@/assets/u-loader.jpg.asset.json";
+import uExcavator from "@/assets/u-excavator.jpg.asset.json";
+import uHitachi from "@/assets/u-hitachi.jpg.asset.json";
+import uDevelon from "@/assets/u-develon.jpg.asset.json";
+import uSheep1 from "@/assets/u-sheep1.jpg.asset.json";
+import uSheep2 from "@/assets/u-sheep2.jpg.asset.json";
+import uFlock from "@/assets/u-flock.jpg.asset.json";
+import uFlock2 from "@/assets/u-flock2.jpg.asset.json";
+import uFeed from "@/assets/u-feed.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,8 +51,8 @@ const categoryLinks = {
   Livestock: "/livestock-export",
   "Oil Seeds": "/oil-seeds-export",
   Pulses: "/pulses-export",
-  Machinery: "/machinery-imports",
-  Pharmaceuticals: "/pharmaceutical-imports",
+  "Construction Machines & Spare Parts": "/machinery-imports",
+  "Medicine & Pharmaceutical Equipment": "/pharmaceutical-imports",
 } as const;
 
 
@@ -305,11 +312,11 @@ function About() {
 
 function Categories() {
   const items = [
-    { img: catLivestock, tag: "Available Livestock • Vet Inspected", title: "Livestock" as const, desc: "Healthy cattle prepared through veterinary inspection, quality control and export documentation." },
+    { img: uFlock.url, tag: "Cattle • Sheep • Goats • Camels", title: "Livestock" as const, desc: "Healthy cattle, sheep, goats and camels prepared through veterinary inspection, quality control and export documentation." },
     { img: catOilseeds, tag: "Sesame • Niger • Soybean", title: "Oil Seeds" as const, desc: "Sesame, Niger seed, soybean, linseed and sunflower with cleaning, sorting and shipment support." },
     { img: catPulses, tag: "Chickpeas • Mung • Beans", title: "Pulses" as const, desc: "Chickpeas, green mung, white pea beans, kidney beans and lentils for wholesalers and importers." },
-    { img: catMachinery, tag: "Excavators • Cranes • Plants", title: "Machinery" as const, desc: "Excavators, bulldozers, wheel loaders, tower cranes and industrial plants imported for Ethiopian projects." },
-    { img: catPharma, tag: "EFDA Compliant • B2B Supply", title: "Pharmaceuticals" as const, desc: "Prescription and over-the-counter medicines imported for hospitals, pharmacies and NGO health programs." },
+    { img: uLoader.url, tag: "Excavators • Loaders • Spare Parts", title: "Construction Machines & Spare Parts" as const, desc: "Excavators, bulldozers, wheel loaders, tower cranes and genuine spare parts imported for Ethiopian projects." },
+    { img: catPharma, tag: "EFDA Compliant • B2B Supply", title: "Medicine & Pharmaceutical Equipment" as const, desc: "Prescription and OTC medicines plus medical equipment imported for hospitals, pharmacies and NGO health programs." },
   ];
   return (
     <section id="categories" className="sm:px-4 scroll-mt-24">
@@ -332,7 +339,7 @@ function Categories() {
               </div>
               <div className="p-4 flex-1 flex flex-col">
                 <div className="text-gold text-[0.68rem] tracking-[0.16em] uppercase font-semibold">{c.tag}</div>
-                <h3 className="font-serif text-3xl mt-3 text-cream">{c.title}</h3>
+                <h3 className="font-serif text-2xl xl:text-3xl mt-3 text-cream">{c.title}</h3>
                 <p className="text-cream/70 text-sm mt-3 leading-relaxed flex-1">{c.desc}</p>
                 <Magnetic>
                   <Link to={categoryLinks[c.title]} className="text-gold text-sm mt-6 inline-flex items-center gap-2 hover:gap-3 transition-all">
@@ -351,17 +358,17 @@ function Categories() {
 function Catalog() {
   const items = [
     { img: pGoats, t: "Live Goats", d: "Hardy live goats selected from trusted supply networks." },
-    { img: pSheep, t: "Live Sheep", d: "Healthy sheep supplied for meat and breeding markets." },
+    { img: uSheep1.url, t: "Live Sheep", d: "Healthy sheep supplied for meat and breeding markets." },
     { img: pCattle, t: "Cattle", d: "Cattle sourcing for commercial buyers and livestock traders." },
     { img: pSesame, t: "Sesame Seeds", d: "Export-grade sesame seeds for food processors and traders." },
     { img: pNiger, t: "Niger Seed", d: "Niger seed sourced for oil extraction and bird feed supply chains." },
     { img: pSunflower, t: "Sunflower Seed", d: "Sunflower seed supply for edible oil and processing customers." },
     { img: pSesame, t: "Chickpeas & Pulses", d: "Chickpeas, mung beans, kidney beans and lentils for food distributors." },
-    { img: catMachinery, t: "Construction Machinery", d: "Excavators, bulldozers and wheel loaders imported for project sites." },
-    { img: catConstruction, t: "Tower Cranes", d: "Tower cranes for high-rise and vertical construction projects." },
-    { img: catMachinery, t: "Farming Equipment", d: "Tractors and mechanized equipment for agricultural operations." },
+    { img: uExcavator.url, t: "Excavators", d: "Tracked and wheeled excavators imported for earthworks and civil projects." },
+    { img: uLoader.url, t: "Wheel Loaders", d: "Wheel loaders for material handling on construction and quarry sites." },
+    { img: uHitachi.url, t: "Spare Parts", d: "Genuine spare parts and technical tools for heavy machinery fleets." },
     { img: catPharma, t: "Prescription Medicines", d: "EFDA-registered medicines supplied to hospitals and pharmacies." },
-    { img: catPharma, t: "OTC & Hospital Supply", d: "Over-the-counter products and bulk hospital supply programs." },
+    { img: catPharma, t: "Medical Equipment", d: "Pharmaceutical and medical equipment for hospitals, pharmacies and NGOs." },
   ];
   return (
     <section className="max-w-6xl mx-auto px-6 py-20 sm:py-28">
