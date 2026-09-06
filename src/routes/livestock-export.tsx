@@ -2,11 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ProductPage } from "@/components/site/ProductPage";
 import pGoats from "@/assets/p-goats.jpg";
 import pCattle from "@/assets/p-cattle.jpg";
-import uSheep1 from "@/assets/u-sheep1.jpg.asset.json";
-import uSheep2 from "@/assets/u-sheep2.jpg.asset.json";
+import pSheep from "@/assets/p-sheep.jpg";
+import camel from "@/assets/products/camel.jpg.asset.json";
 import uFlock from "@/assets/u-flock.jpg.asset.json";
 import uFlock2 from "@/assets/u-flock2.jpg.asset.json";
-import uFeed from "@/assets/u-feed.jpg.asset.json";
 
 export const Route = createFileRoute("/livestock-export")({
   head: () => ({
@@ -26,7 +25,7 @@ function LivestockPage() {
   return (
     <ProductPage
       eyebrow="Livestock Export"
-      heroImg={[uFlock2.url, uFlock.url, uSheep1.url, pCattle]}
+      heroImg={[uFlock2.url, uFlock.url, pCattle, camel.url]}
       title="From Ethiopian highlands to the world's markets."
       intro="Healthy cattle, sheep, goats and camels sourced through trusted farmer networks, inspected for quality, supported with veterinary documentation and prepared for global buyers."
       highlights={[
@@ -37,12 +36,10 @@ function LivestockPage() {
       itemsHeading="Livestock available for export"
       itemsSubheading="Browse the current livestock categories prepared for sourcing, inspection, documentation, and shipment coordination."
       items={[
-        { img: pGoats, title: "Live Goats", desc: "Hardy live goats selected from trusted supply networks.", note: "Buyer-specific sourcing, health checks, and export preparation available." },
-        { img: uSheep1.url, title: "Live Sheep", desc: "Healthy sheep supplied for meat and breeding markets.", note: "Batch coordination, quarantine support, and documentation workflow." },
-        { img: pCattle, title: "Cattle", desc: "Cows, bulls and oxen sourced for commercial buyers and livestock traders.", note: "Inspection-led procurement with shipment coordination." },
-        { img: uFlock.url, title: "Export Flocks", desc: "Large-volume sheep and goat flocks coordinated for regional buyers.", note: "Holding facilities, batching and health certification support." },
-        { img: uSheep2.url, title: "Breeding Stock", desc: "Breeding heifers and rams coordinated for herd development programs.", note: "Selection support, documentation, and shipment coordination available." },
-        { img: uFeed.url, title: "Feed & Nutrition", desc: "Balanced feed programs that keep export livestock in top condition.", note: "Quality feed sourcing and holding-period nutrition management." },
+        { img: pCattle, title: "Cattle (cows, bulls, oxen)", desc: "Healthy cows, bulls and oxen sourced from pastoral networks for commercial meat and livestock buyers.", note: "Health certification, veterinary inspection, and export quarantine coordination." },
+        { img: pSheep, title: "Sheep", desc: "Premium Ethiopian highland and lowland sheep supplied for meat and breeding markets.", note: "Batch sorting, quarantine support, and international documentation." },
+        { img: pGoats, title: "Goats", desc: "Hardy, healthy live goats selected from trusted pastoralist supply networks.", note: "Buyer-specific weight grades, veterinary checks, and export preparation." },
+        { img: camel.url, title: "Camel", desc: "Desert-adapted camels selected for trade, transport, and commercial meat markets across the Middle East and Africa.", note: "Quarantine management, veterinary certification, and transport logistics." },
       ]}
       supportHeading="Livestock export support from selection to shipment."
       support={[

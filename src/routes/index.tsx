@@ -17,12 +17,21 @@ import catOilseeds from "@/assets/cat-oilseeds.jpg";
 import catPulses from "@/assets/cat-pulses.jpg";
 import catPharma from "@/assets/cat-pharma.jpg";
 import pGoats from "@/assets/p-goats.jpg";
-
+import pSheep from "@/assets/p-sheep.jpg";
 import pCattle from "@/assets/p-cattle.jpg";
-import pSesame from "@/assets/p-sesame.jpg";
-import pNiger from "@/assets/p-niger.jpg";
-import pSunflower from "@/assets/p-sunflower.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
+
+import sesame from "@/assets/products/sesame.jpg.asset.json";
+import niger from "@/assets/products/niger.jpg.asset.json";
+import sunflower from "@/assets/products/sunflower.jpg.asset.json";
+import chickpeas from "@/assets/products/chickpeas.jpg.asset.json";
+import camel from "@/assets/products/camel.jpg.asset.json";
+import bulldozer from "@/assets/products/bulldozer.jpg.asset.json";
+import towercrane from "@/assets/products/towercrane.jpg.asset.json";
+import tractor from "@/assets/products/tractor.jpg.asset.json";
+import rxMedicine from "@/assets/products/rxmedicine.jpg.asset.json";
+import medicalEquipment from "@/assets/products/medicalequipment.jpg.asset.json";
+
 import uLoader from "@/assets/u-loader.jpg.asset.json";
 import uExcavator from "@/assets/u-excavator.jpg.asset.json";
 import uHitachi from "@/assets/u-hitachi.jpg.asset.json";
@@ -230,7 +239,7 @@ function Hero() {
         <div className="relative px-4 sm:px-6 pb-6 sm:pb-8 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           {[
             ["2017", "Established"],
-            ["4", "Business Divisions"],
+            ["5", "Business Divisions"],
             ["EFDA", "Compliant Imports"],
             ["100%", "Quality First"],
           ].map(([k, v], i) => (
@@ -313,10 +322,10 @@ function About() {
 function Categories() {
   const items = [
     { img: uFlock.url, tag: "Cattle • Sheep • Goats • Camels", title: "Livestock" as const, desc: "Healthy cattle, sheep, goats and camels prepared through veterinary inspection, quality control and export documentation." },
-    { img: catOilseeds, tag: "Sesame • Niger • Soybean", title: "Oil Seeds" as const, desc: "Sesame, Niger seed, soybean, linseed and sunflower with cleaning, sorting and shipment support." },
-    { img: catPulses, tag: "Chickpeas • Mung • Beans", title: "Pulses" as const, desc: "Chickpeas, green mung, white pea beans, kidney beans and lentils for wholesalers and importers." },
+    { img: sesame.url, tag: "Sesame • Niger • Soybean", title: "Oil Seeds" as const, desc: "Sesame, Niger seed, soybean, linseed and sunflower with cleaning, sorting and shipment support." },
+    { img: chickpeas.url, tag: "Chickpeas • Mung • Beans", title: "Pulses" as const, desc: "Chickpeas, green mung, white pea beans, kidney beans and lentils for wholesalers and importers." },
     { img: uLoader.url, tag: "Excavators • Loaders • Spare Parts", title: "Construction Machines & Spare Parts" as const, desc: "Excavators, bulldozers, wheel loaders, tower cranes and genuine spare parts imported for Ethiopian projects." },
-    { img: catPharma, tag: "EFDA Compliant • B2B Supply", title: "Medicine & Pharmaceutical Equipment" as const, desc: "Prescription and OTC medicines plus medical equipment imported for hospitals, pharmacies and NGO health programs." },
+    { img: rxMedicine.url, tag: "EFDA Compliant • B2B Supply", title: "Medicine & Pharmaceutical Equipment" as const, desc: "Prescription and OTC medicines plus medical equipment imported for hospitals, pharmacies and NGO health programs." },
   ];
   return (
     <section id="categories" className="sm:px-4 scroll-mt-24">
@@ -331,9 +340,9 @@ function Categories() {
             <SplitReveal text="Premium exports and trusted imports across five divisions." />
           </h2>
         </div>
-        <div className="relative mt-10 sm:mt-14 grid md:grid-cols-3 gap-6" style={{ perspective: "1200px" }}>
-          {items.map((c) => (
-            <div data-cat-card key={c.title} className="rounded-2xl border border-gold/20 bg-forest p-4 flex flex-col group overflow-hidden">
+        <div className="relative mt-10 sm:mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6" style={{ perspective: "1200px" }}>
+          {items.map((c, idx) => (
+            <div data-cat-card key={c.title} className={`rounded-2xl border border-gold/20 bg-forest p-4 flex flex-col group overflow-hidden ${idx === 3 ? "lg:col-span-1" : ""} ${idx === 4 ? "sm:col-span-2 lg:col-span-2" : ""}`}>
               <div className="rounded-xl overflow-hidden">
                 <img src={c.img} alt={c.title} loading="lazy" className="h-52 w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-110" />
               </div>
@@ -357,18 +366,22 @@ function Categories() {
 
 function Catalog() {
   const items = [
-    { img: pGoats, t: "Live Goats", d: "Hardy live goats selected from trusted supply networks." },
-    { img: uSheep1.url, t: "Live Sheep", d: "Healthy sheep supplied for meat and breeding markets." },
-    { img: pCattle, t: "Cattle", d: "Cattle sourcing for commercial buyers and livestock traders." },
-    { img: pSesame, t: "Sesame Seeds", d: "Export-grade sesame seeds for food processors and traders." },
-    { img: pNiger, t: "Niger Seed", d: "Niger seed sourced for oil extraction and bird feed supply chains." },
-    { img: pSunflower, t: "Sunflower Seed", d: "Sunflower seed supply for edible oil and processing customers." },
-    { img: pSesame, t: "Chickpeas & Pulses", d: "Chickpeas, mung beans, kidney beans and lentils for food distributors." },
+    { img: pCattle, t: "Cattle (Cows, Bulls, Oxen)", d: "Healthy cows, bulls and oxen selected from Ethiopian pastoral networks." },
+    { img: pSheep, t: "Live Sheep", d: "Healthy sheep supplied for regional meat and breeding markets." },
+    { img: pGoats, t: "Live Goats", d: "Hardy live goats selected from trusted highland and lowland networks." },
+    { img: camel.url, t: "Live Camels", d: "Desert-adapted camels selected for trade, transport and export markets." },
+    { img: sesame.url, t: "Sesame Seeds", d: "Export-grade natural white and brown sesame seeds for global traders." },
+    { img: niger.url, t: "Niger Seed", d: "Niger seed sourced for edible oil extraction and bird feed supply chains." },
+    { img: sunflower.url, t: "Sunflower Seed", d: "Premium sunflower seed supply for edible oil processors." },
+    { img: chickpeas.url, t: "Chickpeas & Pulses", d: "Chickpeas, green mung beans, kidney beans and lentils for food distributors." },
     { img: uExcavator.url, t: "Excavators", d: "Tracked and wheeled excavators imported for earthworks and civil projects." },
+    { img: bulldozer.url, t: "Bulldozers", d: "Heavy bulldozers imported for site preparation and infrastructure development." },
     { img: uLoader.url, t: "Wheel Loaders", d: "Wheel loaders for material handling on construction and quarry sites." },
+    { img: towercrane.url, t: "Tower Cranes", d: "Tower cranes imported for vertical construction and high-rise projects." },
+    { img: tractor.url, t: "Farming Equipment", d: "Mechanized tractors and agricultural equipment for commercial farming." },
     { img: uHitachi.url, t: "Spare Parts", d: "Genuine spare parts and technical tools for heavy machinery fleets." },
-    { img: catPharma, t: "Prescription Medicines", d: "EFDA-registered medicines supplied to hospitals and pharmacies." },
-    { img: catPharma, t: "Medical Equipment", d: "Pharmaceutical and medical equipment for hospitals, pharmacies and NGOs." },
+    { img: rxMedicine.url, t: "Prescription Medicines", d: "EFDA-registered pharmaceuticals supplied to hospitals and pharmacies." },
+    { img: medicalEquipment.url, t: "Medical Equipment", d: "Advanced medical diagnostic and surgical equipment for healthcare centers." },
   ];
   return (
     <section className="max-w-6xl mx-auto px-6 py-20 sm:py-28">
@@ -380,16 +393,16 @@ function Catalog() {
           <SplitReveal text="Export-ready varieties, packaging and documentation across every category." />
         </h2>
       </div>
-      <div className="mt-10 sm:mt-14 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="mt-10 sm:mt-14 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {items.map((p, i) => (
-          <Reveal key={p.t} delay={(i % 3) * 100}>
-            <div className="card-soft p-4 group overflow-hidden">
+          <Reveal key={p.t} delay={(i % 4) * 80}>
+            <div className="card-soft p-4 group overflow-hidden h-full flex flex-col hover-scale">
               <div className="rounded-xl overflow-hidden">
-                <img src={p.img} alt={p.t} loading="lazy" className="h-52 w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-110" />
+                <img src={p.img} alt={p.t} loading="lazy" className="h-48 w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-110" />
               </div>
-              <div className="p-4">
-                <h3 className="font-serif text-2xl text-forest">{p.t}</h3>
-                <p className="text-muted-ink text-sm mt-2 leading-relaxed">{p.d}</p>
+              <div className="p-3 flex-1 flex flex-col justify-between">
+                <h3 className="font-serif text-xl text-forest font-semibold mt-1">{p.t}</h3>
+                <p className="text-muted-ink text-xs sm:text-sm mt-2 leading-relaxed">{p.d}</p>
               </div>
             </div>
           </Reveal>

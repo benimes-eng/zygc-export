@@ -1,11 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProductPage } from "@/components/site/ProductPage";
 import heroImg from "@/assets/cat-machinery.jpg";
-import constructionImg from "@/assets/cat-construction.jpg";
 import uLoader from "@/assets/u-loader.jpg.asset.json";
 import uExcavator from "@/assets/u-excavator.jpg.asset.json";
 import uHitachi from "@/assets/u-hitachi.jpg.asset.json";
 import uDevelon from "@/assets/u-develon.jpg.asset.json";
+import bulldozer from "@/assets/products/bulldozer.jpg.asset.json";
+import towercrane from "@/assets/products/towercrane.jpg.asset.json";
+import tractor from "@/assets/products/tractor.jpg.asset.json";
 
 export const Route = createFileRoute("/machinery-imports")({
   head: () => ({
@@ -37,11 +39,11 @@ function MachineryPage() {
       itemsSubheading="Sourced from established international manufacturers and delivered with customs clearance and project logistics support."
       items={[
         { img: uExcavator.url, title: "Excavators", desc: "Tracked and wheeled excavators for earthworks and civil projects.", note: "Sourcing, shipping, customs clearance and site delivery handled end to end." },
-        { img: uDevelon.url, title: "Bulldozers", desc: "Dozers for site preparation, road works and bulk earthmoving.", note: "Model selection matched to project scope and ground conditions." },
-        { img: uLoader.url, title: "Wheel Loaders", desc: "Loaders for material handling on construction and quarry sites.", note: "New and certified equipment with spare parts availability." },
-        { img: constructionImg, title: "Tower Cranes", desc: "Tower cranes for vertical construction and high-rise developments.", note: "Import permits, transport and erection coordination supported." },
+        { img: bulldozer.url, title: "Bulldozers", desc: "Heavy track-type dozers for site preparation, road works and bulk earthmoving.", note: "Model selection matched to project scope and ground conditions." },
+        { img: uLoader.url, title: "Wheel Loaders", desc: "Wheel loaders for material handling on construction and quarry sites.", note: "New and certified equipment with spare parts availability." },
+        { img: towercrane.url, title: "Tower Cranes", desc: "Tower cranes for vertical construction and high-rise developments.", note: "Import permits, transport and erection coordination supported." },
         { img: uHitachi.url, title: "Spare Parts", desc: "Genuine spare parts and technical tools for heavy machinery fleets.", note: "Fast sourcing to minimize downtime on active project sites." },
-        { img: heroImg, title: "Farming Equipment", desc: "Tractors and mechanized farming equipment for agricultural operations.", note: "Sourced to strengthen local agricultural productivity." },
+        { img: tractor.url, title: "Farming Equipment", desc: "Tractors and mechanized farming equipment for agricultural operations.", note: "Sourced to strengthen local agricultural productivity." },
       ]}
       supportHeading="Import support from manufacturer to project site."
       support={[
