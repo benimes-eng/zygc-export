@@ -1,9 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProductPage } from "@/components/site/ProductPage";
-import heroImg from "@/assets/cat-oilseeds.jpg";
-import pSesame from "@/assets/p-sesame.jpg";
-import pNiger from "@/assets/p-niger.jpg";
-import pSunflower from "@/assets/p-sunflower.jpg";
+import sesame from "@/assets/products/sesame.jpg.asset.json";
+import niger from "@/assets/products/niger.jpg.asset.json";
+import sunflower from "@/assets/products/sunflower.jpg.asset.json";
+import flax from "@/assets/products/flax.jpg.asset.json";
+import castor from "@/assets/products/castor.jpg.asset.json";
+import groundnuts from "@/assets/products/groundnuts.jpg.asset.json";
 
 export const Route = createFileRoute("/oil-seeds-export")({
   head: () => ({
@@ -23,7 +25,7 @@ function OilSeedsPage() {
   return (
     <ProductPage
       eyebrow="Oil Seeds Export"
-      heroImg={[heroImg, pSesame, pNiger, pSunflower]}
+      heroImg={[sesame.url, niger.url, sunflower.url]}
       title="The golden harvest the world keeps coming back for."
       intro="Sesame, Niger seed, soybean, linseed and sunflower handled through careful sourcing, cleaning, sorting, packaging and export documentation."
       highlights={[
@@ -34,12 +36,12 @@ function OilSeedsPage() {
       itemsHeading="Oil seeds available for export"
       itemsSubheading="Key oil seed items listed with images so buyers can review the category before requesting a quote."
       items={[
-        { img: pSesame, title: "Sesame Seeds", desc: "Export-grade sesame seeds for food processors and traders.", note: "Cleaning, grading, packing, and shipment documentation support." },
-        { img: pNiger, title: "Niger Seed", desc: "Niger seed sourced for oil extraction and bird feed supply chains.", note: "Volume sourcing with quality checks before dispatch." },
-        { img: pSunflower, title: "Sunflower Seed", desc: "Sunflower seed supply for edible oil and processing customers.", note: "Flexible packing options and export-ready dispatch coordination." },
-        { img: pSesame, title: "Flaxseed", desc: "Cleaned flaxseed supplied for food and oil processing markets.", note: "Grading, bagging, and container loading coordination." },
-        { img: pNiger, title: "Castor Seed", desc: "Castor seed sourced for industrial oil and processing buyers.", note: "Quality checks and export packing arranged by order volume." },
-        { img: pSunflower, title: "Groundnuts", desc: "Groundnuts supplied for edible oil, snack, and trading markets.", note: "Sorted supply with buyer-aligned packing and dispatch support." },
+        { img: sesame.url, title: "Sesame Seeds", desc: "Export-grade sesame seeds for food processors and traders.", note: "Cleaned, graded and packed for shipment." },
+        { img: niger.url, title: "Niger Seed", desc: "Niger seed for oil extraction and bird feed supply chains.", note: "Quality checked before dispatch." },
+        { img: sunflower.url, title: "Sunflower Seed", desc: "Sunflower seed for edible oil and processing customers.", note: "Flexible packing for export orders." },
+        { img: flax.url, title: "Flaxseed", desc: "Cleaned flaxseed for food and oil processing markets.", note: "Graded and bagged for shipment." },
+        { img: castor.url, title: "Castor Seed", desc: "Castor seed for industrial oil and processing buyers.", note: "Packed according to order volume." },
+        { img: groundnuts.url, title: "Groundnuts", desc: "Groundnuts for edible oil, snack and trading markets.", note: "Sorted and prepared for export." },
       ]}
       supportHeading="Oil seed varieties prepared for bulk international trade."
       support={[
