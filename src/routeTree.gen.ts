@@ -9,43 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as GalleryRouteImport } from './routes/gallery'
-import { Route as LivestockExportRouteImport } from './routes/livestock-export'
-import { Route as MachineryImportsRouteImport } from './routes/machinery-imports'
-import { Route as OilSeedsExportRouteImport } from './routes/oil-seeds-export'
-import { Route as PharmaceuticalImportsRouteImport } from './routes/pharmaceutical-imports'
 import { Route as PulsesExportRouteImport } from './routes/pulses-export'
+import { Route as PharmaceuticalImportsRouteImport } from './routes/pharmaceutical-imports'
+import { Route as OilSeedsExportRouteImport } from './routes/oil-seeds-export'
+import { Route as MachineryImportsRouteImport } from './routes/machinery-imports'
+import { Route as LivestockExportRouteImport } from './routes/livestock-export'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as IndexRouteImport } from './routes/index'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GalleryRoute = GalleryRouteImport.update({
-  id: '/gallery',
-  path: '/gallery',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LivestockExportRoute = LivestockExportRouteImport.update({
-  id: '/livestock-export',
-  path: '/livestock-export',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MachineryImportsRoute = MachineryImportsRouteImport.update({
-  id: '/machinery-imports',
-  path: '/machinery-imports',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OilSeedsExportRoute = OilSeedsExportRouteImport.update({
-  id: '/oil-seeds-export',
-  path: '/oil-seeds-export',
+const PulsesExportRoute = PulsesExportRouteImport.update({
+  id: '/pulses-export',
+  path: '/pulses-export',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PharmaceuticalImportsRoute = PharmaceuticalImportsRouteImport.update({
@@ -53,9 +28,34 @@ const PharmaceuticalImportsRoute = PharmaceuticalImportsRouteImport.update({
   path: '/pharmaceutical-imports',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PulsesExportRoute = PulsesExportRouteImport.update({
-  id: '/pulses-export',
-  path: '/pulses-export',
+const OilSeedsExportRoute = OilSeedsExportRouteImport.update({
+  id: '/oil-seeds-export',
+  path: '/oil-seeds-export',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MachineryImportsRoute = MachineryImportsRouteImport.update({
+  id: '/machinery-imports',
+  path: '/machinery-imports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LivestockExportRoute = LivestockExportRouteImport.update({
+  id: '/livestock-export',
+  path: '/livestock-export',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -136,46 +136,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gallery': {
-      id: '/gallery'
-      path: '/gallery'
-      fullPath: '/gallery'
-      preLoaderRoute: typeof GalleryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/livestock-export': {
-      id: '/livestock-export'
-      path: '/livestock-export'
-      fullPath: '/livestock-export'
-      preLoaderRoute: typeof LivestockExportRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/machinery-imports': {
-      id: '/machinery-imports'
-      path: '/machinery-imports'
-      fullPath: '/machinery-imports'
-      preLoaderRoute: typeof MachineryImportsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/oil-seeds-export': {
-      id: '/oil-seeds-export'
-      path: '/oil-seeds-export'
-      fullPath: '/oil-seeds-export'
-      preLoaderRoute: typeof OilSeedsExportRouteImport
+    '/pulses-export': {
+      id: '/pulses-export'
+      path: '/pulses-export'
+      fullPath: '/pulses-export'
+      preLoaderRoute: typeof PulsesExportRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pharmaceutical-imports': {
@@ -185,11 +150,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PharmaceuticalImportsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/pulses-export': {
-      id: '/pulses-export'
-      path: '/pulses-export'
-      fullPath: '/pulses-export'
-      preLoaderRoute: typeof PulsesExportRouteImport
+    '/oil-seeds-export': {
+      id: '/oil-seeds-export'
+      path: '/oil-seeds-export'
+      fullPath: '/oil-seeds-export'
+      preLoaderRoute: typeof OilSeedsExportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/machinery-imports': {
+      id: '/machinery-imports'
+      path: '/machinery-imports'
+      fullPath: '/machinery-imports'
+      preLoaderRoute: typeof MachineryImportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/livestock-export': {
+      id: '/livestock-export'
+      path: '/livestock-export'
+      fullPath: '/livestock-export'
+      preLoaderRoute: typeof LivestockExportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
