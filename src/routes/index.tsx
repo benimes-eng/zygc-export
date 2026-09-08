@@ -483,17 +483,6 @@ function Quality() {
           );
         })}
       </div>
-
-      <div className="mt-12 grid grid-cols-2 md:grid-cols-5 gap-4">
-        {[["1000+", "Farmers"], ["80+", "Global Partners"], ["25+", "Countries"], ["99%", "Client Satisfaction"], ["15+", "Years Experience"]].map(([k, v], i) => (
-          <Reveal key={v} delay={i * 80}>
-            <div className="card-forest px-6 py-6">
-              <div className="text-gold text-3xl font-serif">{k}</div>
-              <div className="text-cream/70 text-sm mt-1">{v}</div>
-            </div>
-          </Reveal>
-        ))}
-      </div>
     </section>
   );
 }
