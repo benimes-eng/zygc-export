@@ -10,16 +10,12 @@ import { Reveal, SplitReveal } from "@/components/site/Reveal";
 import { Magnetic } from "@/components/site/MagneticButton";
 import { useParallax } from "@/hooks/use-parallax";
 
-import heroBg from "@/assets/hero-bg.jpg";
-import aboutImg from "@/assets/about.jpg";
-import catLivestock from "@/assets/cat-livestock.jpg";
-import catOilseeds from "@/assets/cat-oilseeds.jpg";
-import catPulses from "@/assets/cat-pulses.jpg";
-import catPharma from "@/assets/cat-pharma.jpg";
-import pGoats from "@/assets/p-goats.jpg";
-import pSheep from "@/assets/p-sheep.jpg";
-import pCattle from "@/assets/p-cattle.jpg";
-import ctaBg from "@/assets/cta-bg.jpg";
+import heroImage from "@/assets/real/hero.jpg.asset.json";
+import aboutImage from "@/assets/real/about.jpg.asset.json";
+import ctaImage from "@/assets/real/cta.jpg.asset.json";
+import cattleImage from "@/assets/real/cattle.jpg.asset.json";
+import goatImage from "@/assets/real/goat.jpg.asset.json";
+
 
 import sesame from "@/assets/products/sesame.jpg.asset.json";
 import niger from "@/assets/products/niger.jpg.asset.json";
