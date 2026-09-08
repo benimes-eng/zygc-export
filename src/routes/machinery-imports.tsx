@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProductPage } from "@/components/site/ProductPage";
-import heroImg from "@/assets/cat-machinery.jpg";
 import uLoader from "@/assets/u-loader.jpg.asset.json";
 import uExcavator from "@/assets/u-excavator.jpg.asset.json";
 import uHitachi from "@/assets/u-hitachi.jpg.asset.json";
