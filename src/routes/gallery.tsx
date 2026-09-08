@@ -3,17 +3,27 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { WhatsApp } from "@/components/site/WhatsApp";
 
-import a from "@/assets/cat-livestock.jpg";
-import b from "@/assets/cat-oilseeds.jpg";
-import c from "@/assets/cat-pulses.jpg";
-import d from "@/assets/p-goats.jpg";
-import e from "@/assets/p-sheep.jpg";
-import f from "@/assets/p-cattle.jpg";
-import g from "@/assets/p-sesame.jpg";
-import h from "@/assets/p-niger.jpg";
-import i from "@/assets/p-sunflower.jpg";
-import j from "@/assets/about.jpg";
-import k from "@/assets/cta-bg.jpg";
+import cattleImage from "@/assets/real/cattle.jpg.asset.json";
+import goatImage from "@/assets/real/goat.jpg.asset.json";
+import heroImage from "@/assets/real/hero.jpg.asset.json";
+import aboutImage from "@/assets/real/about.jpg.asset.json";
+import ctaImage from "@/assets/real/cta.jpg.asset.json";
+import uSheep1 from "@/assets/u-sheep1.jpg.asset.json";
+import uSheep2 from "@/assets/u-sheep2.jpg.asset.json";
+import uFlock from "@/assets/u-flock.jpg.asset.json";
+import uFlock2 from "@/assets/u-flock2.jpg.asset.json";
+import uFeed from "@/assets/u-feed.jpg.asset.json";
+import uLoader from "@/assets/u-loader.jpg.asset.json";
+import uExcavator from "@/assets/u-excavator.jpg.asset.json";
+import uHitachi from "@/assets/u-hitachi.jpg.asset.json";
+import uDevelon from "@/assets/u-develon.jpg.asset.json";
+import sesame from "@/assets/products/sesame.jpg.asset.json";
+import niger from "@/assets/products/niger.jpg.asset.json";
+import sunflower from "@/assets/products/sunflower.jpg.asset.json";
+import chickpeas from "@/assets/products/chickpeas.jpg.asset.json";
+import lentils from "@/assets/products/lentils.jpg.asset.json";
+import camel from "@/assets/products/camel.jpg.asset.json";
+import rxMedicine from "@/assets/products/rxmedicine.jpg.asset.json";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
