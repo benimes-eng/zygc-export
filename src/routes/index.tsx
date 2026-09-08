@@ -21,6 +21,7 @@ import sesame from "@/assets/products/sesame.jpg.asset.json";
 import niger from "@/assets/products/niger.jpg.asset.json";
 import sunflower from "@/assets/products/sunflower.jpg.asset.json";
 import chickpeas from "@/assets/products/chickpeas.jpg.asset.json";
+import lentils from "@/assets/products/lentils.jpg.asset.json";
 import camel from "@/assets/products/camel.jpg.asset.json";
 import bulldozer from "@/assets/products/bulldozer.jpg.asset.json";
 import towercrane from "@/assets/products/towercrane.jpg.asset.json";
@@ -187,7 +188,7 @@ function Hero() {
         <div
           data-hero-bg
           className="absolute inset-x-0 -top-24 -bottom-24 bg-cover bg-center will-change-transform"
-          style={{ backgroundImage: `url(${heroBg})` }}
+          style={{ backgroundImage: `url(${heroImage.url})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-forest/30 to-forest-deep/85" />
         <Particles className="absolute inset-0 w-full h-full" count={45} />
@@ -274,7 +275,7 @@ function About() {
     <section className="max-w-6xl mx-auto px-6 py-20 sm:py-28">
       <div className="grid md:grid-cols-2 gap-12 items-start">
         <Reveal>
-          <img src={aboutImg} alt="Ethiopian highland farmland" loading="lazy" width={1000} height={1200}
+          <img src={aboutImage.url} alt="Ethiopian highland farmland" loading="lazy" width={1000} height={1200}
                className="rounded-3xl w-full h-auto object-cover float-slow" />
         </Reveal>
         <div>
@@ -362,14 +363,15 @@ function Categories() {
 
 function Catalog() {
   const items = [
-    { img: pCattle, t: "Cattle (Cows, Bulls, Oxen)", d: "Healthy cows, bulls and oxen selected from Ethiopian pastoral networks." },
-    { img: pSheep, t: "Live Sheep", d: "Healthy sheep supplied for regional meat and breeding markets." },
-    { img: pGoats, t: "Live Goats", d: "Hardy live goats selected from trusted highland and lowland networks." },
+    { img: cattleImage.url, t: "Cattle (Cows, Bulls, Oxen)", d: "Healthy cows, bulls and oxen selected from Ethiopian pastoral networks." },
+    { img: uSheep1.url, t: "Live Sheep", d: "Healthy sheep supplied for regional meat and breeding markets." },
+    { img: goatImage.url, t: "Live Goats", d: "Hardy live goats selected from trusted highland and lowland networks." },
     { img: camel.url, t: "Live Camels", d: "Desert-adapted camels selected for trade, transport and export markets." },
     { img: sesame.url, t: "Sesame Seeds", d: "Export-grade natural white and brown sesame seeds for global traders." },
     { img: niger.url, t: "Niger Seed", d: "Niger seed sourced for edible oil extraction and bird feed supply chains." },
     { img: sunflower.url, t: "Sunflower Seed", d: "Premium sunflower seed supply for edible oil processors." },
-    { img: chickpeas.url, t: "Chickpeas & Pulses", d: "Chickpeas, green mung beans, kidney beans and lentils for food distributors." },
+    { img: chickpeas.url, t: "Chickpeas", d: "Export-grade chickpeas sorted and graded for wholesalers and food distributors." },
+    { img: lentils.url, t: "Lentils & Beans", d: "Lentils, green mung beans, kidney beans and white pea beans for food distributors." },
     { img: uExcavator.url, t: "Excavators", d: "Tracked and wheeled excavators imported for earthworks and civil projects." },
     { img: bulldozer.url, t: "Bulldozers", d: "Heavy bulldozers imported for site preparation and infrastructure development." },
     { img: uLoader.url, t: "Wheel Loaders", d: "Wheel loaders for material handling on construction and quarry sites." },
@@ -377,7 +379,7 @@ function Catalog() {
     { img: tractor.url, t: "Farming Equipment", d: "Mechanized tractors and agricultural equipment for commercial farming." },
     { img: uHitachi.url, t: "Spare Parts", d: "Genuine spare parts and technical tools for heavy machinery fleets." },
     { img: rxMedicine.url, t: "Prescription Medicines", d: "EFDA-registered pharmaceuticals supplied to hospitals and pharmacies." },
-    { img: medicalEquipment.url, t: "Medical Equipment", d: "Advanced medical diagnostic and surgical equipment for healthcare centers." },
+    { img: medicalEquipment.url, t: "Medical Equipment", d: "Diagnostic, surgical and hospital equipment supplied to healthcare centers." },
   ];
   return (
     <section className="max-w-6xl mx-auto px-6 py-20 sm:py-28">
@@ -448,9 +450,9 @@ function Process() {
 
 function Quality() {
   const items = [
-    { i: ShieldCheck, t: "ISO Standards", d: "Structured processes for inspection discipline, documentation and shipment readiness." },
+    { i: ShieldCheck, t: "Inspection Discipline", d: "Structured processes for inspection, documentation and shipment readiness." },
     { i: Stethoscope, t: "Veterinary Certification", d: "Livestock exports supported by veterinary checks and required export documentation." },
-    { i: Leaf, t: "Organic Standards", d: "Oil seeds and pulses handled with careful sourcing, cleaning and traceability practices." },
+    { i: Leaf, t: "Careful Sourcing", d: "Oil seeds and pulses handled with careful sourcing, cleaning and traceability practices." },
     { i: FileCheck2, t: "Export Compliance", d: "Buyer-ready paperwork, origin support and professional communication at each stage." },
     { i: Search, t: "International Inspection", d: "Products prepared for inspection standards across destination markets and trade routes." },
     { i: MapPin, t: "Traceability", d: "Clear sourcing and shipment visibility from farmer network to export documentation." },
@@ -462,7 +464,7 @@ function Quality() {
           <div className="eyebrow mb-4">Quality Assurance</div>
         </Reveal>
         <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight text-ink">
-          <SplitReveal text="Certified export confidence for demanding international buyers." />
+          <SplitReveal text="Export confidence for demanding international buyers." />
         </h2>
       </div>
       <div className="mt-10 sm:mt-14 grid sm:grid-cols-2 md:grid-cols-3 gap-5">
@@ -505,13 +507,13 @@ function CTA() {
         <div
           ref={bgRef}
           className="absolute inset-x-0 -top-24 -bottom-24 bg-cover bg-center will-change-transform"
-          style={{ backgroundImage: `url(${ctaBg})` }}
+          style={{ backgroundImage: `url(${ctaImage.url})` }}
         />
         <div className="absolute inset-0 bg-forest-deep/85" />
         <Particles className="absolute inset-0 w-full h-full" count={40} />
         <div className="relative">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl text-cream leading-tight max-w-3xl mx-auto">
-            <SplitReveal text="Ready To Source Ethiopia's Finest Agricultural Products?" />
+            <SplitReveal text="Ready To Trade With ZYGC Global Trade?" />
           </h2>
           <Reveal delay={300}>
             <div className="mt-8 sm:mt-10 flex flex-wrap gap-3 sm:gap-4 justify-center">
@@ -522,7 +524,7 @@ function CTA() {
               </Magnetic>
               <Magnetic>
                 <Link to="/contact" className="btn-gold-outline">
-                  Talk To Export Team <ArrowRight className="w-4 h-4" />
+                  Talk To Our Trade Team <ArrowRight className="w-4 h-4" />
                 </Link>
               </Magnetic>
             </div>
