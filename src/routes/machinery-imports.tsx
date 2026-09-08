@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProductPage } from "@/components/site/ProductPage";
-import uLoader from "@/assets/u-loader.jpg.asset.json";
-import uExcavator from "@/assets/u-excavator.jpg.asset.json";
-import uHitachi from "@/assets/u-hitachi.jpg.asset.json";
-import uDevelon from "@/assets/u-develon.jpg.asset.json";
-import bulldozer from "@/assets/products/bulldozer.jpg.asset.json";
-import towercrane from "@/assets/products/towercrane.jpg.asset.json";
-import tractor from "@/assets/products/tractor.jpg.asset.json";
+const uLoader = "/images/u-loader.jpg";
+const uExcavator = "/images/u-excavator.jpg";
+const uHitachi = "/images/u-hitachi.jpg";
+const uDevelon = "/images/u-develon.jpg";
+const bulldozer = "/images/bulldozer.jpg";
+const towercrane = "/images/towercrane.jpg";
+const tractor = "/images/tractor.jpg";
 
 export const Route = createFileRoute("/machinery-imports")({
   head: () => ({
@@ -26,7 +26,7 @@ function MachineryPage() {
   return (
     <ProductPage
       eyebrow="Construction Machines & Spare Parts"
-      heroImg={[uLoader.url, uExcavator.url, uHitachi.url, uDevelon.url]}
+      heroImg={[uLoader, uExcavator, uHitachi, uDevelon]}
       title="The heavy iron that builds a nation."
       intro="We import heavy-duty construction machinery, genuine spare parts and technical assets to fuel local infrastructure development and supply the Ethiopian market."
       highlights={[
@@ -37,12 +37,12 @@ function MachineryPage() {
       itemsHeading="Machines & parts we import"
       itemsSubheading="Sourced from established international manufacturers and delivered with customs clearance and project logistics support."
       items={[
-        { img: uExcavator.url, title: "Excavators", desc: "Tracked and wheeled excavators for earthworks and civil projects.", note: "Sourcing, shipping, customs clearance and site delivery handled end to end." },
-        { img: bulldozer.url, title: "Bulldozers", desc: "Heavy track-type dozers for site preparation, road works and bulk earthmoving.", note: "Model selection matched to project scope and ground conditions." },
-        { img: uLoader.url, title: "Wheel Loaders", desc: "Wheel loaders for material handling on construction and quarry sites.", note: "New and certified equipment with spare parts availability." },
-        { img: towercrane.url, title: "Tower Cranes", desc: "Tower cranes for vertical construction and high-rise developments.", note: "Import permits, transport and erection coordination supported." },
-        { img: uHitachi.url, title: "Spare Parts", desc: "Genuine spare parts and technical tools for heavy machinery fleets.", note: "Fast sourcing to minimize downtime on active project sites." },
-        { img: tractor.url, title: "Farming Equipment", desc: "Tractors and mechanized farming equipment for agricultural operations.", note: "Sourced to strengthen local agricultural productivity." },
+        { img: uExcavator, title: "Excavators", desc: "Tracked and wheeled excavators for earthworks and civil projects.", note: "Sourcing, shipping, customs clearance and site delivery handled end to end." },
+        { img: bulldozer, title: "Bulldozers", desc: "Heavy track-type dozers for site preparation, road works and bulk earthmoving.", note: "Model selection matched to project scope and ground conditions." },
+        { img: uLoader, title: "Wheel Loaders", desc: "Wheel loaders for material handling on construction and quarry sites.", note: "New and certified equipment with spare parts availability." },
+        { img: towercrane, title: "Tower Cranes", desc: "Tower cranes for vertical construction and high-rise developments.", note: "Import permits, transport and erection coordination supported." },
+        { img: uHitachi, title: "Spare Parts", desc: "Genuine spare parts and technical tools for heavy machinery fleets.", note: "Fast sourcing to minimize downtime on active project sites." },
+        { img: tractor, title: "Farming Equipment", desc: "Tractors and mechanized farming equipment for agricultural operations.", note: "Sourced to strengthen local agricultural productivity." },
       ]}
       supportHeading="Import support from manufacturer to project site."
       support={[

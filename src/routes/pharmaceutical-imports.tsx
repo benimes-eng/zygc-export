@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProductPage } from "@/components/site/ProductPage";
-import rxMedicine from "@/assets/products/rxmedicine.jpg.asset.json";
-import medicalEquipment from "@/assets/products/medicalequipment.jpg.asset.json";
+const rxMedicine = "/images/rxmedicine.jpg";
+const medicalEquipment = "/images/medicalequipment.jpg";
 
 export const Route = createFileRoute("/pharmaceutical-imports")({
   head: () => ({
@@ -21,7 +21,7 @@ function PharmaPage() {
   return (
     <ProductPage
       eyebrow="Medicine & Pharmaceutical Equipment"
-      heroImg={[rxMedicine.url, medicalEquipment.url]}
+      heroImg={[rxMedicine, medicalEquipment]}
       title="Medicine that reaches every corner of Ethiopia."
       intro="Our medical supply wing procures prescription and over-the-counter pharmaceuticals from globally certified manufacturers, clears them through EFDA and distributes them to healthcare networks nationwide."
       highlights={[
@@ -32,12 +32,12 @@ function PharmaPage() {
       itemsHeading="Medical supply capabilities"
       itemsSubheading="A regulated import channel built around product registration, quality clearance and dependable B2B distribution."
       items={[
-        { img: rxMedicine.url, title: "Prescription Medicines", desc: "Registered prescription pharmaceuticals from certified manufacturers.", note: "Product registration and EFDA quality clearance handled before import." },
-        { img: rxMedicine.url, title: "OTC Products", desc: "Over-the-counter medicines for retail pharmacy networks.", note: "Supplied in line with local labelling and regulatory requirements." },
-        { img: medicalEquipment.url, title: "Hospital Supply", desc: "Bulk medical equipment and pharmaceutical supplies for public and private hospitals.", note: "Tender support, scheduled deliveries and documentation provided." },
-        { img: rxMedicine.url, title: "Pharmacy Distribution", desc: "Distribution to retail pharmacies across Addis Ababa and regional states.", note: "Consistent restocking with traceable batch records." },
-        { img: medicalEquipment.url, title: "NGO Programs", desc: "Supply of diagnostics, surgical supplies and medicine to health programs and donor projects.", note: "Compliance paperwork and delivery coordination included." },
-        { img: medicalEquipment.url, title: "Import Permits", desc: "Customs import permits and regulatory clearance for medical goods.", note: "Managed directly with EFDA and customs authorities." },
+        { img: rxMedicine, title: "Prescription Medicines", desc: "Registered prescription pharmaceuticals from certified manufacturers.", note: "Product registration and EFDA quality clearance handled before import." },
+        { img: rxMedicine, title: "OTC Products", desc: "Over-the-counter medicines for retail pharmacy networks.", note: "Supplied in line with local labelling and regulatory requirements." },
+        { img: medicalEquipment, title: "Hospital Supply", desc: "Bulk medical equipment and pharmaceutical supplies for public and private hospitals.", note: "Tender support, scheduled deliveries and documentation provided." },
+        { img: rxMedicine, title: "Pharmacy Distribution", desc: "Distribution to retail pharmacies across Addis Ababa and regional states.", note: "Consistent restocking with traceable batch records." },
+        { img: medicalEquipment, title: "NGO Programs", desc: "Supply of diagnostics, surgical supplies and medicine to health programs and donor projects.", note: "Compliance paperwork and delivery coordination included." },
+        { img: medicalEquipment, title: "Import Permits", desc: "Customs import permits and regulatory clearance for medical goods.", note: "Managed directly with EFDA and customs authorities." },
       ]}
       supportHeading="A compliant, traceable pharmaceutical import channel."
       support={[

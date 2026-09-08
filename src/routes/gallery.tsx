@@ -3,27 +3,6 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { WhatsApp } from "@/components/site/WhatsApp";
 
-import cattleImage from "@/assets/real/cattle.jpg.asset.json";
-import goatImage from "@/assets/real/goat.jpg.asset.json";
-import heroImage from "@/assets/real/hero.jpg.asset.json";
-import aboutImage from "@/assets/real/about.jpg.asset.json";
-import ctaImage from "@/assets/real/cta.jpg.asset.json";
-import uSheep1 from "@/assets/u-sheep1.jpg.asset.json";
-import uSheep2 from "@/assets/u-sheep2.jpg.asset.json";
-import uFlock from "@/assets/u-flock.jpg.asset.json";
-import uFlock2 from "@/assets/u-flock2.jpg.asset.json";
-import uFeed from "@/assets/u-feed.jpg.asset.json";
-import uLoader from "@/assets/u-loader.jpg.asset.json";
-import uExcavator from "@/assets/u-excavator.jpg.asset.json";
-import uHitachi from "@/assets/u-hitachi.jpg.asset.json";
-import uDevelon from "@/assets/u-develon.jpg.asset.json";
-import sesame from "@/assets/products/sesame.jpg.asset.json";
-import niger from "@/assets/products/niger.jpg.asset.json";
-import sunflower from "@/assets/products/sunflower.jpg.asset.json";
-import chickpeas from "@/assets/products/chickpeas.jpg.asset.json";
-import lentils from "@/assets/products/lentils.jpg.asset.json";
-import camel from "@/assets/products/camel.jpg.asset.json";
-import rxMedicine from "@/assets/products/rxmedicine.jpg.asset.json";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -40,7 +19,8 @@ export const Route = createFileRoute("/gallery")({
 });
 
 function Gallery() {
-  const imgs = [uFlock2, uSheep1, cattleImage, sesame, uLoader, uSheep2, chickpeas, uExcavator, goatImage, niger, uFlock, camel, sunflower, uHitachi, lentils, uFeed, heroImage, uDevelon, rxMedicine, aboutImage, ctaImage].map((m) => m.url);
+  // camel.jpg is intentionally omitted: no legitimate binary exists in the repository, its history, or the supplied asset package.
+  const imgs = ["/images/u-flock2.jpg", "/images/u-sheep1.jpg", "/images/cattle.jpg", "/images/sesame.jpg", "/images/u-loader.jpg", "/images/u-sheep2.jpg", "/images/chickpeas.jpg", "/images/u-excavator.jpg", "/images/goat.jpg", "/images/niger.jpg", "/images/u-flock.jpg", "/images/sunflower.jpg", "/images/u-hitachi.jpg", "/images/lentils.jpg", "/images/u-feed.jpg", "/images/hero.jpg", "/images/u-develon.jpg", "/images/rxmedicine.jpg", "/images/about.jpg", "/images/cta.jpg"];
   return (
     <div className="min-h-screen bg-cream">
       <Nav />

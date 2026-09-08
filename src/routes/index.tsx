@@ -10,34 +10,30 @@ import { Reveal, SplitReveal } from "@/components/site/Reveal";
 import { Magnetic } from "@/components/site/MagneticButton";
 import { useParallax } from "@/hooks/use-parallax";
 
-import heroImage from "@/assets/real/hero.jpg.asset.json";
-import aboutImage from "@/assets/real/about.jpg.asset.json";
-import ctaImage from "@/assets/real/cta.jpg.asset.json";
-import cattleImage from "@/assets/real/cattle.jpg.asset.json";
-import goatImage from "@/assets/real/goat.jpg.asset.json";
-
-
-import sesame from "@/assets/products/sesame.jpg.asset.json";
-import niger from "@/assets/products/niger.jpg.asset.json";
-import sunflower from "@/assets/products/sunflower.jpg.asset.json";
-import chickpeas from "@/assets/products/chickpeas.jpg.asset.json";
-import lentils from "@/assets/products/lentils.jpg.asset.json";
-import camel from "@/assets/products/camel.jpg.asset.json";
-import bulldozer from "@/assets/products/bulldozer.jpg.asset.json";
-import towercrane from "@/assets/products/towercrane.jpg.asset.json";
-import tractor from "@/assets/products/tractor.jpg.asset.json";
-import rxMedicine from "@/assets/products/rxmedicine.jpg.asset.json";
-import medicalEquipment from "@/assets/products/medicalequipment.jpg.asset.json";
-
-import uLoader from "@/assets/u-loader.jpg.asset.json";
-import uExcavator from "@/assets/u-excavator.jpg.asset.json";
-import uHitachi from "@/assets/u-hitachi.jpg.asset.json";
-import uDevelon from "@/assets/u-develon.jpg.asset.json";
-import uSheep1 from "@/assets/u-sheep1.jpg.asset.json";
-import uSheep2 from "@/assets/u-sheep2.jpg.asset.json";
-import uFlock from "@/assets/u-flock.jpg.asset.json";
-import uFlock2 from "@/assets/u-flock2.jpg.asset.json";
-import uFeed from "@/assets/u-feed.jpg.asset.json";
+const heroImage = "/images/hero.jpg";
+const aboutImage = "/images/about.jpg";
+const ctaImage = "/images/cta.jpg";
+const cattleImage = "/images/cattle.jpg";
+const goatImage = "/images/goat.jpg";
+const sesame = "/images/sesame.jpg";
+const niger = "/images/niger.jpg";
+const sunflower = "/images/sunflower.jpg";
+const chickpeas = "/images/chickpeas.jpg";
+const lentils = "/images/lentils.jpg";
+const bulldozer = "/images/bulldozer.jpg";
+const towercrane = "/images/towercrane.jpg";
+const tractor = "/images/tractor.jpg";
+const rxMedicine = "/images/rxmedicine.jpg";
+const medicalEquipment = "/images/medicalequipment.jpg";
+const uLoader = "/images/u-loader.jpg";
+const uExcavator = "/images/u-excavator.jpg";
+const uHitachi = "/images/u-hitachi.jpg";
+const uDevelon = "/images/u-develon.jpg";
+const uSheep1 = "/images/u-sheep1.jpg";
+const uSheep2 = "/images/u-sheep2.jpg";
+const uFlock = "/images/u-flock.jpg";
+const uFlock2 = "/images/u-flock2.jpg";
+const uFeed = "/images/u-feed.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -188,7 +184,7 @@ function Hero() {
         <div
           data-hero-bg
           className="absolute inset-x-0 -top-24 -bottom-24 bg-cover bg-center will-change-transform"
-          style={{ backgroundImage: `url(${heroImage.url})` }}
+          style={{ backgroundImage: `url(${heroImage})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-forest/30 to-forest-deep/85" />
         <Particles className="absolute inset-0 w-full h-full" count={45} />
@@ -275,7 +271,7 @@ function About() {
     <section className="max-w-6xl mx-auto px-6 py-20 sm:py-28">
       <div className="grid md:grid-cols-2 gap-12 items-start">
         <Reveal>
-          <img src={aboutImage.url} alt="Ethiopian highland farmland" loading="lazy" width={1000} height={1200}
+          <img src={aboutImage} alt="Ethiopian highland farmland" loading="lazy" width={1000} height={1200}
                className="rounded-3xl w-full h-auto object-cover float-slow" />
         </Reveal>
         <div>
@@ -318,11 +314,11 @@ function About() {
 
 function Categories() {
   const items = [
-    { img: uFlock.url, tag: "Cattle • Sheep • Goats • Camels", title: "Livestock" as const, desc: "Healthy cattle, sheep, goats and camels prepared through veterinary inspection, quality control and export documentation." },
-    { img: sesame.url, tag: "Sesame • Niger • Soybean", title: "Oil Seeds" as const, desc: "Sesame, Niger seed, soybean, linseed and sunflower with cleaning, sorting and shipment support." },
-    { img: chickpeas.url, tag: "Chickpeas • Mung • Beans", title: "Pulses" as const, desc: "Chickpeas, green mung, white pea beans, kidney beans and lentils for wholesalers and importers." },
-    { img: uLoader.url, tag: "Excavators • Loaders • Spare Parts", title: "Construction Machines & Spare Parts" as const, desc: "Excavators, bulldozers, wheel loaders, tower cranes and genuine spare parts imported for Ethiopian projects." },
-    { img: rxMedicine.url, tag: "EFDA Compliant • B2B Supply", title: "Medicine & Pharmaceutical Equipment" as const, desc: "Prescription and OTC medicines plus medical equipment imported for hospitals, pharmacies and NGO health programs." },
+    { img: uFlock, tag: "Cattle • Sheep • Goats • Camels", title: "Livestock" as const, desc: "Healthy cattle, sheep, goats and camels prepared through veterinary inspection, quality control and export documentation." },
+    { img: sesame, tag: "Sesame • Niger • Soybean", title: "Oil Seeds" as const, desc: "Sesame, Niger seed, soybean, linseed and sunflower with cleaning, sorting and shipment support." },
+    { img: chickpeas, tag: "Chickpeas • Mung • Beans", title: "Pulses" as const, desc: "Chickpeas, green mung, white pea beans, kidney beans and lentils for wholesalers and importers." },
+    { img: uLoader, tag: "Excavators • Loaders • Spare Parts", title: "Construction Machines & Spare Parts" as const, desc: "Excavators, bulldozers, wheel loaders, tower cranes and genuine spare parts imported for Ethiopian projects." },
+    { img: rxMedicine, tag: "EFDA Compliant • B2B Supply", title: "Medicine & Pharmaceutical Equipment" as const, desc: "Prescription and OTC medicines plus medical equipment imported for hospitals, pharmacies and NGO health programs." },
   ];
   return (
     <section id="categories" className="sm:px-4 scroll-mt-24">
@@ -363,23 +359,23 @@ function Categories() {
 
 function Catalog() {
   const items = [
-    { img: cattleImage.url, t: "Cattle (Cows, Bulls, Oxen)", d: "Healthy cows, bulls and oxen selected from Ethiopian pastoral networks." },
-    { img: uSheep1.url, t: "Live Sheep", d: "Healthy sheep supplied for regional meat and breeding markets." },
-    { img: goatImage.url, t: "Live Goats", d: "Hardy live goats selected from trusted highland and lowland networks." },
-    { img: camel.url, t: "Live Camels", d: "Desert-adapted camels selected for trade, transport and export markets." },
-    { img: sesame.url, t: "Sesame Seeds", d: "Export-grade natural white and brown sesame seeds for global traders." },
-    { img: niger.url, t: "Niger Seed", d: "Niger seed sourced for edible oil extraction and bird feed supply chains." },
-    { img: sunflower.url, t: "Sunflower Seed", d: "Premium sunflower seed supply for edible oil processors." },
-    { img: chickpeas.url, t: "Chickpeas", d: "Export-grade chickpeas sorted and graded for wholesalers and food distributors." },
-    { img: lentils.url, t: "Lentils & Beans", d: "Lentils, green mung beans, kidney beans and white pea beans for food distributors." },
-    { img: uExcavator.url, t: "Excavators", d: "Tracked and wheeled excavators imported for earthworks and civil projects." },
-    { img: bulldozer.url, t: "Bulldozers", d: "Heavy bulldozers imported for site preparation and infrastructure development." },
-    { img: uLoader.url, t: "Wheel Loaders", d: "Wheel loaders for material handling on construction and quarry sites." },
-    { img: towercrane.url, t: "Tower Cranes", d: "Tower cranes imported for vertical construction and high-rise projects." },
-    { img: tractor.url, t: "Farming Equipment", d: "Mechanized tractors and agricultural equipment for commercial farming." },
-    { img: uHitachi.url, t: "Spare Parts", d: "Genuine spare parts and technical tools for heavy machinery fleets." },
-    { img: rxMedicine.url, t: "Prescription Medicines", d: "EFDA-registered pharmaceuticals supplied to hospitals and pharmacies." },
-    { img: medicalEquipment.url, t: "Medical Equipment", d: "Diagnostic, surgical and hospital equipment supplied to healthcare centers." },
+    { img: cattleImage, t: "Cattle (Cows, Bulls, Oxen)", d: "Healthy cows, bulls and oxen selected from Ethiopian pastoral networks." },
+    { img: uSheep1, t: "Live Sheep", d: "Healthy sheep supplied for regional meat and breeding markets." },
+    { img: goatImage, t: "Live Goats", d: "Hardy live goats selected from trusted highland and lowland networks." },
+    { t: "Live Camels", d: "Desert-adapted camels selected for trade, transport and export markets." },
+    { img: sesame, t: "Sesame Seeds", d: "Export-grade natural white and brown sesame seeds for global traders." },
+    { img: niger, t: "Niger Seed", d: "Niger seed sourced for edible oil extraction and bird feed supply chains." },
+    { img: sunflower, t: "Sunflower Seed", d: "Premium sunflower seed supply for edible oil processors." },
+    { img: chickpeas, t: "Chickpeas", d: "Export-grade chickpeas sorted and graded for wholesalers and food distributors." },
+    { img: lentils, t: "Lentils & Beans", d: "Lentils, green mung beans, kidney beans and white pea beans for food distributors." },
+    { img: uExcavator, t: "Excavators", d: "Tracked and wheeled excavators imported for earthworks and civil projects." },
+    { img: bulldozer, t: "Bulldozers", d: "Heavy bulldozers imported for site preparation and infrastructure development." },
+    { img: uLoader, t: "Wheel Loaders", d: "Wheel loaders for material handling on construction and quarry sites." },
+    { img: towercrane, t: "Tower Cranes", d: "Tower cranes imported for vertical construction and high-rise projects." },
+    { img: tractor, t: "Farming Equipment", d: "Mechanized tractors and agricultural equipment for commercial farming." },
+    { img: uHitachi, t: "Spare Parts", d: "Genuine spare parts and technical tools for heavy machinery fleets." },
+    { img: rxMedicine, t: "Prescription Medicines", d: "EFDA-registered pharmaceuticals supplied to hospitals and pharmacies." },
+    { img: medicalEquipment, t: "Medical Equipment", d: "Diagnostic, surgical and hospital equipment supplied to healthcare centers." },
   ];
   return (
     <section className="max-w-6xl mx-auto px-6 py-20 sm:py-28">
@@ -396,7 +392,7 @@ function Catalog() {
           <Reveal key={p.t} delay={(i % 4) * 80}>
             <div className="card-soft p-4 group overflow-hidden h-full flex flex-col hover-scale">
               <div className="rounded-xl overflow-hidden">
-                <img src={p.img} alt={p.t} loading="lazy" className="h-48 w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-110" />
+                {p.img ? <img src={p.img} alt={p.t} loading="lazy" className="h-48 w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-110" /> : <div className="h-48 w-full bg-forest/10" aria-label={`${p.t} image unavailable`} />}
               </div>
               <div className="p-3 flex-1 flex flex-col justify-between">
                 <h3 className="font-serif text-xl text-forest font-semibold mt-1">{p.t}</h3>
@@ -496,7 +492,7 @@ function CTA() {
         <div
           ref={bgRef}
           className="absolute inset-x-0 -top-24 -bottom-24 bg-cover bg-center will-change-transform"
-          style={{ backgroundImage: `url(${ctaImage.url})` }}
+          style={{ backgroundImage: `url(${ctaImage})` }}
         />
         <div className="absolute inset-0 bg-forest-deep/85" />
         <Particles className="absolute inset-0 w-full h-full" count={40} />

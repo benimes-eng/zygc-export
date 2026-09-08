@@ -11,7 +11,7 @@ import { Magnetic } from "@/components/site/MagneticButton";
 import { useParallax } from "@/hooks/use-parallax";
 
 export interface ProductItem {
-  img: string;
+  img?: string;
   title: string;
   desc: string;
   note: string;
@@ -143,12 +143,16 @@ export function ProductPage(p: ProductPageProps) {
             <Reveal key={it.title} delay={(i % 3) * 100}>
               <div className="card-soft overflow-hidden group h-full flex flex-col hover-scale">
                 <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={it.img}
-                    alt={it.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
-                  />
+                  {it.img ? (
+                    <img
+                      src={it.img}
+                      alt={it.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-forest/10" aria-label={`${it.title} image unavailable`} />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
