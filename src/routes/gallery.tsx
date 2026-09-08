@@ -40,7 +40,7 @@ export const Route = createFileRoute("/gallery")({
 });
 
 function Gallery() {
-  const imgs = [a, b, c, d, e, f, g, h, i, j, k];
+  const imgs = [uFlock2, uSheep1, cattleImage, sesame, uLoader, uSheep2, chickpeas, uExcavator, goatImage, niger, uFlock, camel, sunflower, uHitachi, lentils, uFeed, heroImage, uDevelon, rxMedicine, aboutImage, ctaImage].map((m) => m.url);
   return (
     <div className="min-h-screen bg-cream">
       <Nav />
